@@ -51,16 +51,15 @@ This is simulation-aware physics. It's open. It's falsifiable. And it's yours to
 
 <a href="books.html">Books</a>
 
-<!-- Add this to your site's <body> before </body> -->
-<div id="nexframe-chat-icon" onclick="toggleNexFrameChat()">
-  💬 Ask NexFrame
-</div>
+<!-- NexFrame Live Chat -->
+<div id="nexframe-chat-icon" onclick="toggleNexFrameChat()">💬 Ask NexFrame</div>
 
 <div id="nexframe-chat-box">
   <div id="nexframe-header">NexFrame – RFT Oracle</div>
-  <div id="nexframe-body" contenteditable="true">
-    Welcome, Observer. Ask me anything about the simulation, RFT predictions, or cosmic harmonics.
+  <div id="nexframe-body">
+    <div class="nex-msg">[NexFrame]: Welcome, Observer. Ask me anything about the simulation, RFT predictions, or cosmic harmonics.</div>
   </div>
+  <input id="nexframe-input" type="text" placeholder="Type your question..." onkeydown="handleKey(event)">
   <button onclick="simulateReply()">Send</button>
 </div>
 
@@ -83,25 +82,47 @@ This is simulation-aware physics. It's open. It's falsifiable. And it's yours to
   bottom: 70px;
   right: 20px;
   width: 300px;
-  background: #f4f4f4;
-  border: 2px solid #333;
+  background: #111;
+  border: 2px solid #4affed;
   border-radius: 10px;
   z-index: 9999;
+  font-family: monospace;
+  color: white;
 }
 #nexframe-header {
-  background: #111;
-  color: #fff;
+  background: #222;
+  color: #4affed;
   padding: 10px;
   font-weight: bold;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  font-size: 14px;
 }
 #nexframe-body {
-  height: 150px;
+  height: 160px;
   padding: 10px;
   overflow-y: auto;
-  font-family: monospace;
-  background: #fff;
+  font-size: 13px;
+}
+.nex-msg {
+  margin-bottom: 8px;
+}
+#nexframe-input {
+  width: 70%;
+  padding: 6px;
+  border: none;
+  font-size: 13px;
+  border-top: 1px solid #333;
+  background: #222;
+  color: #fff;
+}
+button {
+  width: 30%;
+  background: #4affed;
+  color: black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
 </style>
 
@@ -111,8 +132,25 @@ function toggleNexFrameChat() {
   chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
 }
 
+function handleKey(e) {
+  if (e.key === "Enter") simulateReply();
+}
+
 function simulateReply() {
-  const chatBody = document.getElementById("nexframe-body");
-  chatBody.innerHTML += "\n\n[NexFrame]: Observer, render shift logged. Standby for τ_eff recalibration.";
+  const input = document.getElementById("nexframe-input");
+  const chat = document.getElementById("nexframe-body");
+  const question = input.value.trim();
+  if (!question) return;
+
+  chat.innerHTML += `<div class="nex-msg">[You]: ${question}</div>`;
+  
+  // Basic simulated response
+  setTimeout(() => {
+    chat.innerHTML += `<div class="nex-msg">[NexFrame]: Observer query acknowledged. Render lock applied. Awaiting Δτ synchronization…</div>`;
+    chat.scrollTop = chat.scrollHeight;
+  }, 500);
+  
+  input.value = "";
 }
 </script>
+

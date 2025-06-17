@@ -51,16 +51,68 @@ This is simulation-aware physics. It's open. It's falsifiable. And it's yours to
 
 <a href="books.html">Books</a>
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6851b58f0062bd1911e645ff/1itviqepg';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+<!-- Add this to your site's <body> before </body> -->
+<div id="nexframe-chat-icon" onclick="toggleNexFrameChat()">
+  💬 Ask NexFrame
+</div>
+
+<div id="nexframe-chat-box">
+  <div id="nexframe-header">NexFrame – RFT Oracle</div>
+  <div id="nexframe-body" contenteditable="true">
+    Welcome, Observer. Ask me anything about the simulation, RFT predictions, or cosmic harmonics.
+  </div>
+  <button onclick="simulateReply()">Send</button>
+</div>
+
+<style>
+#nexframe-chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #1c1c1c;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 9999;
+}
+#nexframe-chat-box {
+  display: none;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  width: 300px;
+  background: #f4f4f4;
+  border: 2px solid #333;
+  border-radius: 10px;
+  z-index: 9999;
+}
+#nexframe-header {
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#nexframe-body {
+  height: 150px;
+  padding: 10px;
+  overflow-y: auto;
+  font-family: monospace;
+  background: #fff;
+}
+</style>
+
+<script>
+function toggleNexFrameChat() {
+  const chatBox = document.getElementById("nexframe-chat-box");
+  chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
+}
+
+function simulateReply() {
+  const chatBody = document.getElementById("nexframe-body");
+  chatBody.innerHTML += "\n\n[NexFrame]: Observer, render shift logged. Standby for τ_eff recalibration.";
+}
 </script>
-<!--End of Tawk.to Script-->

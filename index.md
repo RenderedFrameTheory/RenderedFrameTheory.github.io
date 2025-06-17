@@ -30,16 +30,19 @@ What’s on Offer:
 - ✅ Real-time Earth predictions: solar, magnetic, seismic
 - ✅ 50+ open-source, DOI-backed papers
 
-
 ## 📂 Explore
 
+<a href="live-feed.html">Live Prediction Feed</a>
+
+## All RFT Papers
 - [📄 Core Theory DOI](https://doi.org/10.5281/zenodo.15597158)
 - [📊 BAO Prediction](https://doi.org/10.5281/zenodo.15670096)
 - [🧠 Consciousness Engine](https://doi.org/10.5281/zenodo.15540548)
 - [🚀 Mars Mission Solutions](https://doi.org/10.5281/zenodo.15561784)
 - - 📄 [All RFT Papers](papers/index.md)
-## All RFT Papers
+
 ## 🧬 Join the Mission
 This is simulation-aware physics. It's open. It's falsifiable. And it's yours to replicate.
+
 <a href="challenge.html">Challenge RFT</a>
 > “If reality is rendered, then the observer is the engine.”

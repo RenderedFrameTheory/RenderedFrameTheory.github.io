@@ -22,8 +22,8 @@ What’s on Offer:
 - 💬 [Feedback & Predictions](Feedback.md)
 
 <a href="data-sources.html">Verification Data Sources</a>
+<a href="data-sources.html">🔗 Verification Data Sources</a>
 
-https://renderedframetheory.github.io/data-sources.html
 
 ## 🔍 What We’ve Proven
 

@@ -15,13 +15,12 @@ What’s on Offer:
 	•	🔗 Open Science Hub: Every equation, test, and protocol is transparent and reproducible. Our methodology and verification sources are open to all.
 	•	📬 Engage Directly: Have a prediction? A rebuttal? Want to contribute data or replicate an experiment? We welcome your input.
 
-
-
 - 🧠 [RFT Origin Story](Story.md)
+
 - 🚫 [Gatekeeping & Censorship](Gatekeeping.md)
+  
 - 💬 [Feedback & Predictions](Feedback.md)
 
-<a href="data-sources.html">Verification Data Sources</a>
 <a href="data-sources.html">🔗 Verification Data Sources</a>
 
 

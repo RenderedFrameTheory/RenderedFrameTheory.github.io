@@ -108,7 +108,6 @@
       cursor: pointer;
     }
   </style>
-
   <script>
     function toggleNexFrameChat() {
       const chatBox = document.getElementById("nexframe-chat-box");
@@ -134,7 +133,61 @@
       
       input.value = "";
     }
-  </script>
+ <script>
+  function toggleNexFrameChat() {
+    const chatBox = document.getElementById("nexframe-chat-box");
+    chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
+  }
 
-</body>
-</html>
+  function handleKey(e) {
+    if (e.key === "Enter") simulateReply();
+  }
+
+  function simulateReply() {
+    const input = document.getElementById("nexframe-input");
+    const chat = document.getElementById("nexframe-body");
+    const question = input.value.trim();
+    if (!question) return;
+
+    chat.innerHTML += `<div class="nex-msg">[You]: ${question}</div>`;
+
+    const reply = getRFTResponse(question);
+    setTimeout(() => {
+      chat.innerHTML += `<div class="nex-msg">[NexFrame]: ${reply}</div>`;
+      chat.scrollTop = chat.scrollHeight;
+    }, 500);
+
+    input.value = "";
+  }
+
+  function getRFTResponse(msg) {
+    msg = msg.toLowerCase();
+
+    if (msg.includes("τ_eff") || msg.includes("render delay")) {
+      return "τ_eff is the effective render delay caused by phase desync. Current modeled value: 0.0028s.";
+    }
+    if (msg.includes("gvu") || msg.includes("grinstead voyager unit")) {
+      return "GVU (Grinstead Voyager Unit) is 17.04 billion km – based on Voyager 1's distance. It’s the cosmic distance anchor in RFT.";
+    }
+    if (msg.includes("lou") || msg.includes("limara orbital unit")) {
+      return "LOU (Limara Orbital Unit) is 31.56 million seconds – Earth’s orbital loop time. Used to calibrate time in RFT.";
+    }
+    if (msg.includes("fringe") || msg.includes("collapse")) {
+      return "Fringe collapse is observer-induced. Decoherence isn’t physical — it’s render-localized. Test it with EEG + double-slit.";
+    }
+    if (msg.includes("magnetic") || msg.includes("omega_obs") || msg.includes("Ω_obs")) {
+      return "Ω_obs (Observer Magnetic Oscillation) reflects harmonic skew in field symmetry. Active prediction sequence logged.";
+    }
+    if (msg.includes("redshift") || msg.includes("expansion")) {
+      return "RFT models redshift as τ_eff-driven render delay, not spatial expansion. See DOI: 10.5281/zenodo.15670096.";
+    }
+    if (msg.includes("black hole") || msg.includes("singularity")) {
+      return "Black holes are local render collapses. There is no singularity — just coherence breakdown. DOI: 10.5281/zenodo.15669761.";
+    }
+    if (msg.includes("speed of sight") || msg.includes("vsight")) {
+      return "Speed of sight (v_sight) is your rendered visual propagation rate. It varies with observer phase. See DOI: 10.5281/zenodo.15615975.";
+    }
+
+    return "Render acknowledged. Ask about GVU, LOU, τ_eff, predictions, or anything in the simulation field. I reply in logic.";
+  }
+</script>

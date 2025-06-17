@@ -34,17 +34,19 @@ What’s on Offer:
 
 <a href="live-feed.html">Live Prediction Feed</a>
 
-## All RFT Papers
+## RFT Papers
 - [📄 Core Theory DOI](https://doi.org/10.5281/zenodo.15597158)
 - [📊 BAO Prediction](https://doi.org/10.5281/zenodo.15670096)
 - [🧠 Consciousness Engine](https://doi.org/10.5281/zenodo.15540548)
 - [🚀 Mars Mission Solutions](https://doi.org/10.5281/zenodo.15561784)
-- - 📄 [All RFT Papers](papers/index.md)
+- 📄 [All RFT Papers](papers/index.md)
 
 ## 🧬 Join the Mission
-This is simulation-aware physics. It's open. It's falsifiable. And it's yours to replicate.
+This is simulation-aware physics. It's open. It's falsifiable. And it's yours to prove me wrong.
 
 <a href="challenge.html">Challenge RFT</a>
 > “If reality is rendered, then the observer is the engine.”
 
 <a href="simulation.html">Simulation Console</a>
+
+<a href="books.html">Books</a>

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verification Data Sources</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; color: #333; }
+        h1 { color: #003366; }
+        .source-section { margin-bottom: 30px; }
+        h2 { color: #005599; }
+        a { color: #005599; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Verification Data Sources</h1>
+    <p>This page documents all external data sources used for validating Rendered Frame Theory (RFT) predictions and calculations. These links provide public access to raw and processed data relevant to GVU, LOU, BAO clustering, magnetic field trends, solar weather, and seismic events.</p>
+
+    <div class="source-section">
+        <h2>1. NASA Voyager 1 Telemetry API</h2>
+        <p><a href="https://voyager.jpl.nasa.gov/mission/status/" target="_blank">Voyager 1 Mission Status</a> – Used to derive GVU (Grinstead Voyager Unit) by measuring distance, velocity, and mission duration in rendered terms.</p>
+    </div>
+
+    <div class="source-section">
+        <h2>2. Sidereal Earth Orbit Data</h2>
+        <p><a href="https://aa.usno.navy.mil/data/EarthSidereal" target="_blank">US Naval Observatory – Sidereal Year Reference</a> – Used to calibrate LOU (Limara Orbital Unit) based on true orbital period.</p>
+    </div>
+
+    <div class="source-section">
+        <h2>3. SDSS / eBOSS Cosmological Survey Data</h2>
+        <p><a href="https://www.sdss.org/science/final-bao-results/" target="_blank">Sloan Digital Sky Survey – Final BAO Results</a> – Used to compare and validate BAO peak predictions (e.g. 313.40 Mpc).</p>
+    </div>
+
+    <div class="source-section">
+        <h2>4. NOAA Space Weather Prediction Center</h2>
+        <p><a href="https://www.swpc.noaa.gov/" target="_blank">NOAA SWPC</a> – Solar flux, geomagnetic storms, and active region data for magnetic and solar prediction logs.</p>
+    </div>
+
+    <div class="source-section">
+        <h2>5. IRIS Seismic Monitoring</h2>
+        <p><a href="https://www.iris.edu/hq/" target="_blank">IRIS – Incorporated Research Institutions for Seismology</a> – Realtime seismic data to confirm quake predictions.</p>
+    </div>
+
+    <div class="source-section">
+        <h2>What Are GVU and LOU?</h2>
+        <p><strong>GVU (Grinstead Voyager Unit)</strong> is defined as:</p>
+        <p><code>Γ<sub>GVU</sub> = D<sub>V</sub> / (T<sub>V</sub> × V<sub>V</sub>)</code></p>
+        <p>Where:</p>
+        <ul>
+            <li><strong>D<sub>V</sub></strong> = Distance traveled by Voyager 1</li>
+            <li><strong>T<sub>V</sub></strong> = Time since launch (in seconds)</li>
+            <li><strong>V<sub>V</sub></strong> = Average speed of Voyager 1</li>
+        </ul>
+        <p>It encodes a simulation-synchronized measurement of distance rendered over time at a calibrated observer frame.</p>
+
+        <p><strong>LOU (Limara Orbital Unit)</strong> is defined as:</p>
+        <p><code>λ<sub>LOU</sub> = T<sub>Earth</sub> / Ω<sub>obs</sub></code></p>
+        <p>Where:</p>
+        <ul>
+            <li><strong>T<sub>Earth</sub></strong> = True sidereal orbital period of Earth</li>
+            <li><strong>Ω<sub>obs</sub></strong> = Observed magnetic render fluctuation rate (from NOAA/EEG sync)</li>
+        </ul>
+        <p>This establishes how temporal loops cycle under observer-relative harmonics. LOU is essential in BAO collapse thresholds and v<sub>sight</sub> calibration.</p>
+    </div>
+</body>
+</html>

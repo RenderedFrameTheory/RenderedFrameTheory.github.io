@@ -18,7 +18,7 @@ Created by Liam Grinstead, Rendered Frame Theory redefines cosmology using obser
 - [📊 BAO Prediction](https://doi.org/10.5281/zenodo.15670096)
 - [🧠 Consciousness Engine](https://doi.org/10.5281/zenodo.15540548)
 - [🚀 Mars Mission Solutions](https://doi.org/10.5281/zenodo.15561784)
-- 📄 [All RFT Papers](papers.md)
+- 📄 [All RFT Papers]papers/index.md
 ## 🧬 Join the Mission
 This is simulation-aware physics. It's open. It's falsifiable. And it's yours to replicate.
 

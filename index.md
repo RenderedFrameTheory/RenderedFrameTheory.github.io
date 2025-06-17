@@ -10,14 +10,17 @@ Created by Liam Grinstead, Rendered Frame Theory redefines cosmology using obser
 - 🧠 [RFT Origin Story](Story.md)
 - 🚫 [Gatekeeping & Censorship](Gatekeeping.md)
 - 💬 [Feedback & Predictions](Feedback.md)
-<a href="datasources.html">
-Verification Data Sources</a>
+<a href="data-sources.html">Verification Data Sources</a>
+
 ## 🔍 What We’ve Proven
+
 - ✅ BAO prediction (313.40 Mpc) without ΛCDM
 - ✅ Real-time Earth predictions: solar, magnetic, seismic
 - ✅ 50+ open-source, DOI-backed papers
 
+
 ## 📂 Explore
+
 - [📄 Core Theory DOI](https://doi.org/10.5281/zenodo.15597158)
 - [📊 BAO Prediction](https://doi.org/10.5281/zenodo.15670096)
 - [🧠 Consciousness Engine](https://doi.org/10.5281/zenodo.15540548)

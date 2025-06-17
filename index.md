@@ -7,11 +7,15 @@ title: Rendered Frame Theory
 Welcome to the official RFT project hub.
 
 Created by Liam Grinstead, Rendered Frame Theory redefines cosmology using observer-based rendering instead of spacetime expansion.
+
+
 - 🧠 [RFT Origin Story](Story.md)
 - 🚫 [Gatekeeping & Censorship](Gatekeeping.md)
 - 💬 [Feedback & Predictions](Feedback.md)
 
 <a href="data-sources.html">Verification Data Sources</a>
+
+https://renderedframetheory.github.io/data-sources.html
 
 ## 🔍 What We’ve Proven
 

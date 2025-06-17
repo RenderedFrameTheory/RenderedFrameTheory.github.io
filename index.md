@@ -10,6 +10,7 @@ Created by Liam Grinstead, Rendered Frame Theory redefines cosmology using obser
 - 🧠 [RFT Origin Story](Story.md)
 - 🚫 [Gatekeeping & Censorship](Gatekeeping.md)
 - 💬 [Feedback & Predictions](Feedback.md)
+
 <a href="data-sources.html">Verification Data Sources</a>
 
 ## 🔍 What We’ve Proven

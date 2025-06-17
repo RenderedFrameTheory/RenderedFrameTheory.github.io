@@ -9,8 +9,9 @@ Welcome to the official RFT project hub.
 Created by Liam Grinstead, Rendered Frame Theory redefines cosmology using observer-based rendering instead of spacetime expansion.
 - 🧠 [RFT Origin Story](Story.md)
 - 🚫 [Gatekeeping & Censorship](Gatekeeping.md)
-  - 💬 [Feedback & Predictions](Feedback.md)
-📊<a href="datasources.html">Verification Data Sources</a>
+- 💬 [Feedback & Predictions](Feedback.md)
+<a href="datasources.html">
+Verification Data Sources</a>
 ## 🔍 What We’ve Proven
 - ✅ BAO prediction (313.40 Mpc) without ΛCDM
 - ✅ Real-time Earth predictions: solar, magnetic, seismic

@@ -24,5 +24,5 @@ Created by Liam Grinstead, Rendered Frame Theory redefines cosmology using obser
 ## All RFT Papers
 ## 🧬 Join the Mission
 This is simulation-aware physics. It's open. It's falsifiable. And it's yours to replicate.
-
+<a href="challenge.html">Challenge RFT</a>
 > “If reality is rendered, then the observer is the engine.”

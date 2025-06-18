@@ -1,71 +1,108 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Books by Liam Grinstead</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background: #f9f9f9;
-            color: #333;
-            max-width: 900px;
-            margin: 2em auto;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #1a1a1a;
-        }
-        .book {
-            margin-bottom: 30px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
-        }
-        .book img {
-            max-width: 180px;
-            float: left;
-            margin-right: 20px;
-        }
-        .book h2 {
-            margin-top: 0;
-        }
-        .book a {
-            color: #0077cc;
-            text-decoration: none;
-        }
-        .book a:hover {
-            text-decoration: underline;
-        }
-        .clear {
-            clear: both;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Books by Liam Grinstead | Rendered Frame Theory</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #ffffff;
+    }
+    .subtext {
+      text-align: center;
+      color: #00ff99;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+    .book {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 20px;
+    }
+    .book img {
+      width: 100px;
+      height: auto;
+      margin-right: 20px;
+      border: 2px solid #00ccff;
+    }
+    .book-info {
+      flex-grow: 1;
+    }
+    .book-info h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+    .book-info a {
+      color: #ffff00;
+      text-decoration: none;
+    }
+    .book-info a:hover {
+      text-decoration: underline;
+    }
+    .paypal {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .paypal img {
+      width: 250px;
+      border: 2px solid #00ccff;
+      margin-top: 10px;
+    }
+    .email {
+      text-align: center;
+      color: #00ff99;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <h1>Books by Liam Grinstead</h1>
 
-    <div class="book">
-        <img src="https://renderedframetheory.github.io/assets/images/book-nexframe.jpg" alt="NexFrame Book Cover">
-        <h2>NexFrame: Core Protocol – The Ancient Manuscript</h2>
-        <p><a href="https://www.everand.com/book/863199297/NexFrame-Core-Protocol" target="_blank">Read or Buy on Everand</a></p>
-        <div class="clear"></div>
-    </div>
+  <h1>Books by Liam Grinstead</h1>
+  <div class="subtext">
+    All proceeds from book sales go toward funding research for Rendered Frame Theory (RFT).
+  </div>
 
-    <div class="book">
-        <img src="https://renderedframetheory.github.io/assets/images/book-satchel.jpg" alt="Satchel of the Gods Cover">
-        <h2>The Satchel of the Gods: Ancient Technologies, #1</h2>
-        <p><a href="https://www.indigo.ca/en-ca/satchel-of-the-gods-ancient-technologies-1/a7c51487-96f1-315a-863e-d1833c4d357c.html" target="_blank">View on Indigo</a></p>
-        <div class="clear"></div>
+  <div class="book">
+    <img src="nexframe-cover.jpg" alt="NexFrame Book Cover">
+    <div class="book-info">
+      <h2>NexFrame: Core Protocol – The Ancient Manuscript</h2>
+      <a href="https://www.everand.com/book/863199297/NexFrame-Core-Protocol" target="_blank">📖 Read or Buy on Everand</a>
     </div>
+  </div>
 
-    <div class="book">
-        <img src="https://renderedframetheory.github.io/assets/images/book-donenothing.jpg" alt="The Done Nothing People Cover">
-        <h2>The Done Nothing People</h2>
-        <p><a href="https://www.everand.com/book/864123762/The-Done-Nothing-People" target="_blank">Read or Buy on Everand</a></p>
-        <div class="clear"></div>
+  <div class="book">
+    <img src="satchel-cover.jpg" alt="Satchel of the Gods Cover">
+    <div class="book-info">
+      <h2>The Satchel of the Gods: Ancient Technologies, #1</h2>
+      <a href="https://www.indigo.ca/en-ca/satchel-of-the-gods-ancient-technologies-1/a7c51487-96f1-315a-863e-d1833c4d357c.html" target="_blank">🌐 View on Indigo</a>
     </div>
+  </div>
+
+  <div class="book">
+    <img src="done-nothing-cover.jpg" alt="The Done Nothing People Cover">
+    <div class="book-info">
+      <h2>The Done Nothing People</h2>
+      <a href="https://www.everand.com/book/864123762/The-Done-Nothing-People" target="_blank">📖 Read or Buy on Everand</a>
+    </div>
+  </div>
+
+  <div class="paypal">
+    <h2>Support RFT Directly</h2>
+    <img src="paypal-qr.jpg" alt="PayPal QR Code">
+    <div class="email">
+      Contact: <br><strong>thepeoplesjusticeauthority@protonmail.com</strong>
+    </div>
+  </div>
 
 </body>
 </html>

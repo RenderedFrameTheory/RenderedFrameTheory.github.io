@@ -12,7 +12,6 @@
       padding: 30px;
     }
     h1 {
-      
       color: #00ffff;
       font-size: 24px;
     }
@@ -21,19 +20,18 @@
       margin-top: 30px;
     }
     .keybox {
-      position: absolute;
-      top: 30px;
-      right: 30px;
+      margin-top: 15px;
+      margin-bottom: 25px;
       background: #111;
       border: 1px solid #4affed;
-      padding: 10px;
+      padding: 15px;
       font-size: 14px;
       line-height: 1.6;
-      width: 220px;
+      width: fit-content;
     }
     .keybox h3 {
       color: #ffd700;
-      margin: 0 0 10px 0;
+      margin: 0 0 8px 0;
       font-size: 16px;
     }
     .prediction {
@@ -72,26 +70,27 @@
   <h1>📡 Live Predictions Feed</h1>
 
   <div class="keybox">
-    <h3>🧠 Prediction Type</h3>
+    <h3>🧠 Prediction Types</h3>
     🌦 Atmospheric<br>
     📉 Seismic<br>
     🌞 Solar<br>
-    🧲 Magnetic/Anomaly<br><br>
+    🧲 Magnetic / Anomaly<br><br>
 
     <h3>📊 Result Key</h3>
     ✅ Confirmed<br>
     ❌ Missed<br>
-    ⚠️ Partial
+    ⚠️ Partial<br>
+    ⏳ Awaiting Results
   </div>
 
   <p>Weekly predictions issued and updated daily at 9:00 PM UK time.<br>
-  All forecasts are made prior to release of official data (see <a href="data-sources.html">Verification Sources</a>).</p>
+  All forecasts are made before official datasets are released (see <a href="data-sources.html">Verification Sources</a>).</p>
 
   <h2>🔮 Week of June 17–23, 2025</h2>
 
   <div class="prediction">
     <p><strong>📍 London | 🌦 Atmospheric</strong></p>
-    <p>Prediction: Light cloud with sharp temp drop 18:00–20:00 BST</p>
+    <p>Prediction: Light cloud with sharp temp drop between 18:00–20:00 BST</p>
     <p class="timestamp">Issued: June 18, 2025 – 08:00 BST</p>
     <p class="status confirmed">Status: ✅ Confirmed</p>
   </div>
@@ -107,12 +106,12 @@
     <p><strong>📍 AR3695 | 🌞 Solar</strong></p>
     <p>Prediction: No Earth-facing emission burst</p>
     <p class="timestamp">Issued: June 18, 2025 – 09:10 UTC</p>
-    <p class="status">Status: Awaiting Results</p>
+    <p class="status">Status: ⏳ Awaiting Results</p>
   </div>
 
   <div class="prediction">
     <p><strong>📍 South Atlantic | 🧲 Magnetic</strong></p>
-    <p>Prediction: μ-field skew spike 14:00–16:00 UTC</p>
+    <p>Prediction: μ-field skew spike expected 14:00–16:00 UTC</p>
     <p class="timestamp">Issued: June 18, 2025 – 08:30 UTC</p>
     <p class="status missed">Status: ❌ Missed</p>
   </div>

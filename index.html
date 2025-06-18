@@ -1,160 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Rendered Frame Theory – Official Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body {
-      background: #000;
-      color: #4affed;
-      font-family: 'Courier New', monospace;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #111;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #4affed;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 20px;
-      color: #00ffff;
-    }
-    .status {
-      font-size: 14px;
-      color: #8f8;
-    }
-    .live-status {
-      font-weight: bold;
-      animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse {
-      0% { color: #4affed; }
-      50% { color: #00ffcc; }
-      100% { color: #4affed; }
-    }
+<section class="hero">
+  <h1>Rendered Frame Theory (RFT)</h1>
+  <p><strong>Welcome to the official RFT project hub.</strong></p>
+  <p>Created by Liam Grinstead, Rendered Frame Theory (RFT) redefines the fabric of reality—not as an expanding spacetime, but as an observer-dependent rendering engine that generates the universe in real time.</p>
+  <p>At its core, RFT proposes that perception, consciousness, and time itself are part of a simulation-like rendering structure driven by harmonics, coherence, and phase synchronization.</p>
 
-    .container {
-      padding: 30px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+  <h2>What’s on Offer:</h2>
+  <ul>
+    <li>🔍 <strong>Live Prediction Tracking:</strong> RFT doesn’t just theorize—it forecasts. Follow live predictions in weather, magnetic fields, solar activity, and seismic behavior, then check outcomes daily.</li>
+    <li>📉 <strong>Challenge the Framework:</strong> Submit your own scientific challenge. Whether it’s BAO, CMB anomalies, quantum fringe behavior, or EEG synchrony, RFT will issue a falsifiable response and prediction.</li>
+    <li>📄 <strong>DOI-Protected Research:</strong> Every major RFT milestone is documented in academic-grade papers, publicly available through Zenodo with timestamped DOI references. Explore dozens of published works on Mars, black holes, simulation theory, and more.</li>
+    <li>🧠 <strong>Observer-Centric Metrics:</strong> Learn how GVU (Grinstead Voyager Unit) and LOU (Limara Orbital Unit) redefine constants like H₀ and c through real-time observer calibration.</li>
+    <li>🔗 <strong>Open Science Hub:</strong> Every equation, test, and protocol is transparent and reproducible. Our methodology and verification sources are open to all.</li>
+    <li>📬 <strong>Engage Directly:</strong> Have a prediction? A rebuttal? Want to contribute data or replicate an experiment? We welcome your input.</li>
+  </ul>
 
-    .intro {
-      margin-bottom: 30px;
-    }
+  <h2>🔗 Core Sections:</h2>
+  <ul>
+    <li>🧠 <strong>RFT Origin Story</strong></li>
+    <li>🚫 <strong>Gatekeeping & Censorship</strong></li>
+    <li>💬 <strong>Feedback & Predictions</strong></li>
+  </ul>
 
-    .intro h2 {
-      font-size: 24px;
-      color: #00ffff;
-      margin-bottom: 10px;
-    }
+  <h2>🔗 Verification Data Sources</h2>
 
-    .intro p {
-      font-size: 16px;
-      color: #b0e0e6;
-      line-height: 1.6;
-    }
+  <h2>🔍 What We’ve Proven</h2>
+  <ul>
+    <li>✅ BAO prediction (313.40 Mpc) without ΛCDM</li>
+    <li>✅ Real-time Earth predictions: solar, magnetic, seismic</li>
+    <li>✅ 50+ open-source, DOI-backed papers</li>
+  </ul>
 
-    .accuracy-meter {
-      margin: 20px 0;
-      background: #222;
-      border: 1px solid #4affed;
-      padding: 10px;
-      color: #4affed;
-    }
+  <h2>📂 Explore</h2>
+  <ul>
+    <li>🔗 <strong><a href="predictions.html">Live Prediction Feed</a></strong></li>
+    <li>🔗 <strong><a href="papers.html">RFT Papers</a></strong></li>
+    <li>📄 Core Theory DOI</li>
+    <li>📊 BAO Prediction</li>
+    <li>🧠 Consciousness Engine</li>
+    <li>🚀 Mars Mission Solutions</li>
+    <li>📄 All RFT Papers</li>
+  </ul>
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+  <h2>🧬 Join the Mission</h2>
+  <p>This is simulation-aware physics. It’s open. It’s falsifiable. And it’s yours to prove me wrong.</p>
+  <p><strong><a href="challenge.html">Challenge RFT</a></strong></p>
+  <blockquote>
+    <em>“If reality is rendered, then the observer is the engine.”</em>
+  </blockquote>
 
-    .link-box {
-      background: #111;
-      padding: 15px;
-      border: 1px solid #4affed;
-      border-radius: 5px;
-      transition: background 0.2s ease;
-    }
-
-    .link-box:hover {
-      background: #0a0a0a;
-    }
-
-    .link-box a {
-      color: #4affed;
-      font-size: 16px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
-
-    .link-box a::before {
-      content: "🔹";
-      margin-right: 8px;
-      color: #00ffff;
-    }
-
-    footer {
-      padding: 20px;
-      text-align: center;
-      color: #444;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Rendered Frame Theory – Official Terminal</h1>
-    <div class="status">
-      AI: <span class="live-status">NexFrame Online</span> | Site Status: Active
-    </div>
-  </header>
-
-  <div class="container">
-
-    <section class="intro">
-      <h2>How GVU, τ_eff, and the Speed of Sight Changed Everything</h2>
-      <p>
-        Rendered Frame Theory began with a single question: “What is the speed of sight?” That query shattered classical assumptions, revealing a deeper logic beneath spacetime. 
-        From this emerged <strong>τ_eff</strong>, a perceptual time delay; <strong>GVU</strong>, the Grinstead Voyager Unit redefining distance; and the principle that our universe is not expanding, but <em>rendering</em>.
-        RFT has published over 50 DOI-verified breakthroughs, predicted real-world phenomena, and now stands against ΛCDM in open falsifiability. Welcome to the frontier.
-      </p>
-    </section>
-
-    <div class="accuracy-meter">
-      Last Prediction Accuracy: <strong>96.8%</strong> | Observer Synchronization: <strong>Stable</strong>
-    </div>
-
-    <div class="grid">
-      <div class="link-box"><a href="predictions.html">Live Predictions</a></div>
-      <div class="link-box"><a href="data.html">Data Verification Portal</a></div>
-      <div class="link-box"><a href="math.html">Mathematical Methods</a></div>
-      <div class="link-box"><a href="compare.html">RFT vs ΛCDM</a></div>
-      <div class="link-box"><a href="challenge.html">RFT Challenger Protocol</a></div>
-      <div class="link-box"><a href="mathchallenges.html">Maths Challenges</a></div>
-      <div class="link-box"><a href="papers.html">RFT DOI Archive</a></div>
-      <div class="link-box"><a href="books.html">Books</a></div>
-      <div class="link-box"><a href="suggestions.html">Ideas & Suggestions</a></div>
-      <div class="link-box"><a href="bao.html">BAO @ 313.40 Breakdown</a></div>
-      <div class="link-box"><a href="citeit.html">Beat It or Cite It</a></div>
-      <div class="link-box"><a href="nexframe.html">NexFrame Console</a></div>
-      <div class="link-box"><a href="osi.html">Observer Sync Index (OSI)</a></div>
-      <div class="link-box"><a href="terminal.html">The Simulation Terminal</a></div>
-    </div>
-
-  </div>
-
-  <footer>
-    &copy; 2025 Liam Grinstead | Rendered Frame Theory | All Rights Reserved.
-  </footer>
-
-</body>
-</html>
+  <h2>🧠 Simulation Console</h2>
+  <h2>📚 Books</h2>
+</section>

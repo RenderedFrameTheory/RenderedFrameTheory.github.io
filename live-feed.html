@@ -1,30 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Live Prediction Feed – Rendered Frame Theory</title>
+  <meta charset="UTF-8" />
+  <title>Live Predictions Feed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      background: #000;
+      color: #4affed;
+      font-family: monospace;
+      padding: 30px;
+    }
+    h1 {
+      color: #00ffff;
+      font-size: 24px;
+    }
+    h2 {
+      color: #4affed;
+      margin-top: 30px;
+    }
+    .keybox {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: #111;
+      border: 1px solid #4affed;
+      padding: 10px;
+      font-size: 14px;
+      line-height: 1.6;
+      width: 220px;
+    }
+    .keybox h3 {
+      color: #ffd700;
+      margin: 0 0 10px 0;
+      font-size: 16px;
+    }
+    .prediction {
+      background: #111;
+      border-left: 4px solid #4affed;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .timestamp {
+      font-size: 14px;
+      color: #aaa;
+    }
+    .status {
+      font-weight: bold;
+      color: #ffd700;
+    }
+    .confirmed {
+      color: #00ff00;
+    }
+    .missed {
+      color: #ff4444;
+    }
+    .partial {
+      color: #ffaa00;
+    }
+    .back {
+      margin-top: 40px;
+    }
+    a {
+      color: #ffd700;
+    }
+  </style>
 </head>
 <body>
-  <h1>🌍 RFT Live Prediction Feed</h1>
-  <p>This page displays live or archived predictions using Rendered Frame Theory for:</p>
-  <ul>
-    <li>📍 Magnetic Field Trends (Ω_obs)</li>
-    <li>☀️ Solar Flares & Activity Bursts</li>
-    <li>🌋 Seismic Activity Zones</li>
-    <li>🌦️ Atmospheric Fluctuations</li>
-    <li>🌀 Simulation Anomalies</li>
-  </ul>
 
-  <h2>🟢 Current Cycle Log</h2>
-  <p><strong>June 2025 - Cycle 2:</strong> 25/25 Predictions Matched (100% accuracy)</p>
-  <ul>
-    <li><strong>Magnetic:</strong> June 16 – 12:00 UTC Restabilization Window (Confirmed)</li>
-    <li><strong>Solar:</strong> Weak emission burst, no Earth impact (Confirmed)</li>
-    <li><strong>Seismic (Chile):</strong> Microquakes, no M4+ (Confirmed)</li>
-    <li><strong>Atmospheric (New York):</strong> Rapid temp swing 18:00–20:00 (Confirmed)</li>
-    <li><strong>Anomaly (Africa Belt):</strong> Render latency spike (Confirmed)</li>
-  </ul>
+  <h1>📡 Live Predictions Feed</h1>
 
-  <p><em>For all past prediction logs, visit the full archive → coming soon.</em></p>
+  <div class="keybox">
+    <h3>🧠 Prediction Type</h3>
+    🌦 Atmospheric<br>
+    📉 Seismic<br>
+    🌞 Solar<br>
+    🧲 Magnetic/Anomaly<br><br>
+
+    <h3>📊 Result Key</h3>
+    ✅ Confirmed<br>
+    ❌ Missed<br>
+    ⚠️ Partial
+  </div>
+
+  <p>Weekly predictions issued and updated daily at 9:00 PM UK time.<br>
+  All forecasts are made prior to release of official data (see <a href="data-sources.html">Verification Sources</a>).</p>
+
+  <h2>🔮 Week of June 17–23, 2025</h2>
+
+  <div class="prediction">
+    <p><strong>📍 London | 🌦 Atmospheric</strong></p>
+    <p>Prediction: Light cloud with sharp temp drop 18:00–20:00 BST</p>
+    <p class="timestamp">Issued: June 18, 2025 – 08:00 BST</p>
+    <p class="status confirmed">Status: ✅ Confirmed</p>
+  </div>
+
+  <div class="prediction">
+    <p><strong>📍 Chile | 📉 Seismic</strong></p>
+    <p>Prediction: No magnitude 4+ quake in 200km radius</p>
+    <p class="timestamp">Issued: June 18, 2025 – 07:00 UTC</p>
+    <p class="status confirmed">Status: ✅ Confirmed</p>
+  </div>
+
+  <div class="prediction">
+    <p><strong>📍 AR3695 | 🌞 Solar</strong></p>
+    <p>Prediction: No Earth-facing emission burst</p>
+    <p class="timestamp">Issued: June 18, 2025 – 09:10 UTC</p>
+    <p class="status">Status: Awaiting Results</p>
+  </div>
+
+  <div class="prediction">
+    <p><strong>📍 South Atlantic | 🧲 Magnetic</strong></p>
+    <p>Prediction: μ-field skew spike 14:00–16:00 UTC</p>
+    <p class="timestamp">Issued: June 18, 2025 – 08:30 UTC</p>
+    <p class="status missed">Status: ❌ Missed</p>
+  </div>
+
+  <div class="back">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
 </body>
 </html>

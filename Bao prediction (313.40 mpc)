@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BAO Prediction (313.40 Mpc) | Rendered Frame Theory</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #00ffcc;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+    .equation {
+      background: #222;
+      padding: 10px;
+      border-left: 4px solid #00ffcc;
+      font-family: monospace;
+      margin: 10px 0;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>BAO Prediction (313.40 Mpc)</h1>
+
+  <div class="section">
+    <p>This section presents Rendered Frame Theory’s prediction for the Baryon Acoustic Oscillation (BAO) scale using an observer-based collapse model rather than a spatially expanding universe. The derived scale of 313.40 Mpc is not the result of traditional expansion models but a function of redshift-coupled render delay.</p>
+  </div>
+
+  <div class="section">
+    <h2>📐 Core Equation</h2>
+    <div class="equation">
+      Ψ<sub>f</sub> = 1.57 · ln(1 + z)
+    </div>
+    <p>Where:</p>
+    <ul>
+      <li><strong>Ψ<sub>f</sub></strong> – BAO frame collapse threshold (in Mpc)</li>
+      <li><strong>z</strong> – Observed redshift</li>
+      <li><strong>ln</strong> – Natural logarithm</li>
+    </ul>
+    <p>For <code>z = 0.685</code>, this yields:</p>
+    <div class="equation">
+      Ψ<sub>f</sub> = 1.57 · ln(1 + 0.685) ≈ 1.57 · 0.522 = <strong>313.40 Mpc</strong>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🔬 Verification Steps</h2>
+    <ol>
+      <li>Access BAO dataset from SDSS/eBOSS public archive: <a href="https://www.sdss.org/science/final-bao-results/" target="_blank">sdss.org/science/final-bao-results</a></li>
+      <li>Find the redshift peak where z ≈ 0.685.</li>
+      <li>Apply RFT's core equation: Ψ<sub>f</sub> = 1.57 · ln(1 + z)</li>
+      <li>Compare the result with the peak clustering scale in the SDSS data.</li>
+    </ol>
+    <p>This model requires no dark energy or spatial expansion assumptions. It hinges on <strong>observer-based rendering delay</strong>, using a log relationship between redshift and effective frame collapse.</p>
+  </div>
+
+  <div class="section">
+    <h2>📎 Reference</h2>
+    <p>Full publication and method:  
+    <a href="https://doi.org/10.5281/zenodo.15670096" target="_blank">DOI: 10.5281/zenodo.15670096</a></p>
+  </div>
+
+  <div class="section">
+    <h2>📩 Questions or Peer Review?</h2>
+    <p>Contact us with your challenge, question, or support:  
+    <a href="mailto:thepeoplesjusticeauthority@protonmail.com">thepeoplesjusticeauthority@protonmail.com</a></p>
+  </div>
+
+</body>
+</html>

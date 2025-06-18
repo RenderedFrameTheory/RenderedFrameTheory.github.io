@@ -1,67 +1,80 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Verification Data Sources</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; color: #333; }
-        h1 { color: #003366; }
-        .source-section { margin-bottom: 30px; }
-        h2 { color: #005599; }
-        a { color: #005599; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Verification Data Sources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      background: #000;
+      color: #4affed;
+      font-family: monospace;
+      padding: 30px;
+    }
+    h1 {
+      color: #00ffff;
+      font-size: 24px;
+    }
+    h2 {
+      color: #4affed;
+      margin-top: 30px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+    p {
+      color: #b0e0e6;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .back {
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Verification Data Sources</h1>
-    <p>This page documents all external data sources used for validating Rendered Frame Theory (RFT) predictions and calculations. These links provide public access to raw and processed data relevant to GVU, LOU, BAO clustering, magnetic field trends, solar weather, and seismic events.</p>
 
-    <div class="source-section">
-        <h2>1. NASA Voyager 1 Telemetry API</h2>
-        <p><a href="https://voyager.jpl.nasa.gov/mission/status/" target="_blank">Voyager 1 Mission Status</a> – Used to derive GVU (Grinstead Voyager Unit) by measuring distance, velocity, and mission duration in rendered terms.</p>
-    </div>
+  <h1>🔗 Verification Data Sources</h1>
 
-    <div class="source-section">
-        <h2>2. Sidereal Earth Orbit Data</h2>
-        <p><a href="https://aa.usno.navy.mil/data/EarthSidereal" target="_blank">US Naval Observatory – Sidereal Year Reference</a> – Used to calibrate LOU (Limara Orbital Unit) based on true orbital period.</p>
-    </div>
+  <p>RFT predictions are made in advance and logged publicly. We then verify all forecasts against trusted third-party sources to maintain transparency and falsifiability.</p>
 
-    <div class="source-section">
-        <h2>3. SDSS / eBOSS Cosmological Survey Data</h2>
-        <p><a href="https://www.sdss.org/science/final-bao-results/" target="_blank">Sloan Digital Sky Survey – Final BAO Results</a> – Used to compare and validate BAO peak predictions (e.g. 313.40 Mpc).</p>
-    </div>
+  <h2>🧲 Geomagnetic & Space Weather</h2>
+  <ul>
+    <li>🌐 <a href="https://www.swpc.noaa.gov/" target="_blank">NOAA Space Weather Prediction Center</a> – Official data on K-index, solar storms, coronal mass ejections, and auroral activity.</li>
+    <li>📊 <a href="https://www.sws.bom.gov.au/" target="_blank">Australian Space Weather Service</a> – Southern Hemisphere geomagnetic alerts and global flux patterns.</li>
+    <li>🌞 <a href="https://soho.nascom.nasa.gov/data/realtime-images.html" target="_blank">SOHO/NASA Solar Imagery</a> – Live solar disc images and X-ray data from NASA's Solar and Heliospheric Observatory.</li>
+  </ul>
 
-    <div class="source-section">
-        <h2>4. NOAA Space Weather Prediction Center</h2>
-        <p><a href="https://www.swpc.noaa.gov/" target="_blank">NOAA SWPC</a> – Solar flux, geomagnetic storms, and active region data for magnetic and solar prediction logs.</p>
-    </div>
+  <h2>🌍 Seismic Activity</h2>
+  <ul>
+    <li>📉 <a href="https://earthquake.usgs.gov/earthquakes/map/" target="_blank">USGS Earthquake Map</a> – Real-time global seismic events, magnitude tracking, and epicenter visualisation.</li>
+    <li>🌐 <a href="https://www.emsc-csem.org/" target="_blank">European-Mediterranean Seismological Centre</a> – Independent verification of seismic data, including user-felt reports.</li>
+  </ul>
 
-    <div class="source-section">
-        <h2>5. IRIS Seismic Monitoring</h2>
-        <p><a href="https://www.iris.edu/hq/" target="_blank">IRIS – Incorporated Research Institutions for Seismology</a> – Realtime seismic data to confirm quake predictions.</p>
-    </div>
+  <h2>🌤 Atmospheric Conditions</h2>
+  <ul>
+    <li>☁️ <a href="https://www.metoffice.gov.uk/weather/maps-and-charts/surface-pressure/" target="_blank">UK Met Office</a> – Official forecasts, pressure systems, and atmospheric models.</li>
+    <li>🌍 <a href="https://earth.nullschool.net/" target="_blank">Nullschool Global Earth Simulator</a> – Visual simulation of global wind, pressure, ocean, and particle flow.</li>
+  </ul>
 
-    <div class="source-section">
-        <h2>What Are GVU and LOU?</h2>
-        <p><strong>GVU (Grinstead Voyager Unit)</strong> is defined as:</p>
-        <p><code>Γ<sub>GVU</sub> = D<sub>V</sub> / (T<sub>V</sub> × V<sub>V</sub>)</code></p>
-        <p>Where:</p>
-        <ul>
-            <li><strong>D<sub>V</sub></strong> = Distance traveled by Voyager 1</li>
-            <li><strong>T<sub>V</sub></strong> = Time since launch (in seconds)</li>
-            <li><strong>V<sub>V</sub></strong> = Average speed of Voyager 1</li>
-        </ul>
-        <p>It encodes a simulation-synchronized measurement of distance rendered over time at a calibrated observer frame.</p>
+  <h2>🔬 Electromagnetic & Anomaly Sources</h2>
+  <ul>
+    <li>🧠 <a href="https://www.schumannresonances.org/" target="_blank">Schumann Resonance Monitoring</a> – ELF (Extremely Low Frequency) resonance tracking worldwide.</li>
+    <li>🛰️ <a href="https://iswa.gsfc.nasa.gov/" target="_blank">NASA ISWA (Integrated Space Weather Analysis)</a> – Comprehensive datasets and magnetic field models.</li>
+  </ul>
 
-        <p><strong>LOU (Limara Orbital Unit)</strong> is defined as:</p>
-        <p><code>λ<sub>LOU</sub> = T<sub>Earth</sub> / Ω<sub>obs</sub></code></p>
-        <p>Where:</p>
-        <ul>
-            <li><strong>T<sub>Earth</sub></strong> = True sidereal orbital period of Earth</li>
-            <li><strong>Ω<sub>obs</sub></strong> = Observed magnetic render fluctuation rate (from NOAA/EEG sync)</li>
-        </ul>
-        <p>This establishes how temporal loops cycle under observer-relative harmonics. LOU is essential in BAO collapse thresholds and v<sub>sight</sub> calibration.</p>
-    </div>
+  <p>All predictions are timestamped and made prior to data release. These are the checkpoints for truth. If our frame fails, these sources will show it.</p>
+
+  <div class="back">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
 </body>
 </html>

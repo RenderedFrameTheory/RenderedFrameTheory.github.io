@@ -725,7 +725,7 @@ async def challenge_rft(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # ✅ Launch bot
 async def main():
-    app = ApplicationBuilder().token(7367860353:AAFTUBy5Dx92in9KKbpf3ufxGzx3Nzz5BOA).build()
+    app = ApplicationBuilder().token(7367860353:FTUBy5Dx92in9KKbpf3ufxGzx3Nzz5BOA).build()
 
     app.add_handler(CommandHandler("whoisliam", whoisliam))
     app.add_handler(CommandHandler("whoisnexframe", whoisnexframe))

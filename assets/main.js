@@ -12,6 +12,12 @@ const RFT_CONTACT_EMAIL = "Liamgrinstead2@gmail.com";
 
 // BOOKS — RFT spine titles
 const books = [
+    {
+    title: "Rendered Frame Theory: Consciousness The Harmonic Field",
+    description: "Consciousness codex for RFT: harmonic field structure, symbols, experiments, and updated cosmology model.",
+    link: "https://www.smashwords.com/books/view/1921438",
+    label: "Smashwords"
+  },
   {
     title: "Rendered Frame Theory: The Book They Can't Delete",
     description:

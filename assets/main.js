@@ -4,7 +4,7 @@
 // ==============================================
 
 // CHANGE THIS to the real inbox address.
-const RFT_CONTACT_EMAIL = "REPLACE_WITH_YOUR_EMAIL@example.com";
+const RFT_CONTACT_EMAIL = "Liamgrinstead2@gmail.com";
 
 // ------------------------------
 //  Data: assets

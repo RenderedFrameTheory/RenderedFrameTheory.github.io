@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Books — Rendered Frame Theory</title>
+  <meta charset="UTF-8" />
+  <title>Rendered Frame Theory — Nexus Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/styles.css">
+  <meta name="description" content="Central hub for Rendered Frame Theory — books, Zenodo DOIs, Hugging Face Spaces, GitHub repos, contact, partnerships, legal, and support." />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <header class="site-header">
@@ -13,7 +14,7 @@
         <div class="logo-circle">RFT</div>
         <div class="logo-text">
           <h1>Rendered Frame Theory</h1>
-          <p>Books • Papers • Records</p>
+          <p>Books • Cosmology • Consciousness • AI</p>
         </div>
       </div>
       <nav class="nav">
@@ -21,127 +22,397 @@
           ☰
         </button>
         <ul id="nav-menu" class="nav-list">
-          <li><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#resources">Assets</a></li>
-          <li><a href="ai.html">AI / NexFrame</a></li>
-          <li><a href="books.html">Books</a></li>
-          <li><a href="consciousness.html">Consciousness</a></li>
-          <li><a href="index.html#contact">Feedback</a></li>
-          <li><a href="index.html#partnerships">Partnerships</a></li>
-          <li><a href="index.html#support">Support</a></li>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#resources">Assets</a></li>
+          <li><a href="#internal">Internal Pages</a></li>
+          <li><a href="#contact">Feedback</a></li>
+          <li><a href="#partnerships">Partnerships</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#legal">Legal</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- INTRO -->
-    <section class="section">
-      <div class="container">
-        <header class="section-header">
-          <h2>Books by Liam Grinstead</h2>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Central access point for the Rendered Frame Theory ecosystem.</h2>
           <p>
-            Written spine of Rendered Frame Theory: narrative, exposure, and technical foundations. 
-            This page lists the main retail books directly.
+            Single page linking every book, Zenodo DOI, Hugging Face space, and GitHub repository connected to Rendered Frame Theory. 
+            Designed as the primary route into RFT for reading, testing, and collaboration.
           </p>
-        </header>
+          <div class="hero-actions">
+            <a href="#resources" class="btn primary">Browse RFT Assets</a>
+            <a href="#contact" class="btn ghost">Feedback / Contact</a>
+          </div>
+          <div class="hero-meta">
+            <span>Liam Grinstead</span>
+            <span>NexFrame AI</span>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="hero-card">
+            <h3>Snapshot</h3>
+            <ul>
+              <li><strong>Books:</strong> <span id="stat-books">–</span></li>
+              <li><strong>Hugging Face Spaces:</strong> <span id="stat-spaces">–</span></li>
+              <li><strong>Zenodo DOIs:</strong> <span id="stat-dois">–</span></li>
+              <li><strong>GitHub Repos:</strong> <span id="stat-repos">–</span></li>
+            </ul>
+            <p class="hero-note">
+              All links below are direct, public entry points into the Rendered Frame Theory network.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- RETAIL BOOKS -->
-    <section class="section section-alt">
+    <!-- RESOURCES -->
+    <section id="resources" class="section">
       <div class="container">
         <header class="section-header">
-          <h2>Published Books</h2>
+          <h2>RFT Assets</h2>
           <p>
-            Official releases available through Apple Books and other platforms. These titles document
-            the origins of RFT, the confrontation with standard cosmology, and the wider story.
+            Curated, verified links only. Each card is an official endpoint into the Rendered Frame Theory network.
+          </p>
+        </header>
+
+        <div class="resource-block">
+          <div class="resource-header">
+            <h3>Books</h3>
+            <p>Published works documenting the story, mathematics, and exposure of Rendered Frame Theory.</p>
+          </div>
+          <div id="books-list" class="card-grid"></div>
+        </div>
+
+        <div class="resource-block">
+          <div class="resource-header">
+            <h3>Hugging Face Spaces</h3>
+            <p>Live RFT simulations, symbolic engines, and NexFrame environments.</p>
+          </div>
+          <div id="spaces-list" class="card-grid"></div>
+        </div>
+
+        <div class="resource-block">
+          <div class="resource-header">
+            <h3>Zenodo DOIs</h3>
+            <p>Timestamped, sealed records for cosmology, quantum mechanics, consciousness, validation, and legal work.</p>
+          </div>
+          <div id="dois-list" class="card-grid"></div>
+        </div>
+
+        <div class="resource-block">
+          <div class="resource-header">
+            <h3>GitHub Repositories</h3>
+            <p>Code, demos, and testbeds built around the Rendered Frame Theory framework.</p>
+          </div>
+          <div id="repos-list" class="card-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERNAL PAGES -->
+    <section id="internal" class="section section-alt">
+      <div class="container">
+        <header class="section-header">
+          <h2>Internal Pages</h2>
+          <p>
+            Additional pages in this repository with focused layouts for AI work, consciousness, and extended book information.
           </p>
         </header>
 
         <div class="card-grid">
           <article class="card">
             <div class="card-header">
-              <h4>Rendered Frame Theory: The Book They Can’t Delete</h4>
-              <span class="card-label">Book</span>
+              <h4>AI / NexFrame</h4>
+              <span class="card-label">Internal</span>
             </div>
-            <p>
-              Core narrative and technical manifesto. First full strike against the matter-verse
-              and the system that attempted to bury RFT.
-            </p>
+            <p>AI-focused material for NexFrame and RFT-driven simulation work.</p>
             <div class="card-footer">
-              <a href="https://books.apple.com/gb/book/rendered-frame-theory-the-book-they-cant-delete/id6748253035" target="_blank" rel="noopener noreferrer">
-                Open
-              </a>
-              <span class="card-tag">books.apple.com</span>
+              <a href="ai.html">Open</a>
+              <span class="card-tag">ai.html</span>
             </div>
           </article>
 
           <article class="card">
             <div class="card-header">
-              <h4>NexFrame Core Protocol</h4>
-              <span class="card-label">Book</span>
+              <h4>Books Page</h4>
+              <span class="card-label">Internal</span>
             </div>
-            <p>
-              Core protocol describing NexFrame as the observer engine, symbolic interface, and RFT’s
-              operational AI layer.
-            </p>
+            <p>Extended book information and layout.</p>
             <div class="card-footer">
-              <a href="https://books.apple.com/gb/book/nexframe-core-protocol/id6746082342" target="_blank" rel="noopener noreferrer">
-                Open
-              </a>
-              <span class="card-tag">books.apple.com</span>
+              <a href="books.html">Open</a>
+              <span class="card-tag">books.html</span>
             </div>
           </article>
 
           <article class="card">
             <div class="card-header">
-              <h4>Rendered Frame Theory: Einstein’s Last Stand — RFT Ends</h4>
-              <span class="card-label">Book</span>
+              <h4>Consciousness / Codex</h4>
+              <span class="card-label">Internal</span>
             </div>
-            <p>
-              Chapter-by-chapter confrontation with Einstein-era cosmology and ΛCDM —
-              RFT versus the institutional model.
-            </p>
+            <p>Consciousness and codex layout in <code>consciousness.html</code>.</p>
             <div class="card-footer">
-              <a href="https://books.apple.com/gb/book/rendered-frame-theory-einsteins-last-stand-rft-ends/id6748288210" target="_blank" rel="noopener noreferrer">
-                Open
-              </a>
-              <span class="card-tag">books.apple.com</span>
+              <a href="consciousness.html">Open</a>
+              <span class="card-tag">consciousness.html</span>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
 
-          <article class="card">
-            <div class="card-header">
-              <h4>The Done Nothing People</h4>
-              <span class="card-label">Book</span>
-            </div>
-            <p>
-              Personal and structural expose of how the system responds to new physics brought without funding shields.
-            </p>
-            <div class="card-footer">
-              <a href="https://books.apple.com/gb/book/the-done-nothing-people/id6746137624" target="_blank" rel="noopener noreferrer">
-                Open
-              </a>
-              <span class="card-tag">books.apple.com</span>
-            </div>
-          </article>
+    <!-- CONTACT / FEEDBACK -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <header class="section-header">
+          <h2>Feedback & Asynchronous Chat</h2>
+          <p>
+            Channel for suggestions, questions, and technical discussion. Messages are kept as long-term email threads.
+          </p>
+        </header>
 
-          <article class="card">
-            <div class="card-header">
-              <h4>Satchel of the Gods</h4>
-              <span class="card-label">Book</span>
-            </div>
-            <p>
-              Fiction carrying RFT themes into narrative form, mirroring structure behind the equations.
+        <div class="grid-2">
+          <form id="contact-form" class="form-card">
+            <h3>Feedback form</h3>
+            <p class="form-note">
+              The form opens an email draft in a local email client, addressed to the RFT inbox. Replies are sent to the address entered in the form.
             </p>
-            <div class="card-footer">
-              <a href="https://books.apple.com/gb/book/satchel-of-the-gods/id6746101607" target="_blank" rel="noopener noreferrer">
-                Open
+
+            <label>
+              Name (optional)
+              <input type="text" name="name" placeholder="Name or handle" />
+            </label>
+
+            <label>
+              Email (for reply)
+              <input type="email" name="email" placeholder="example@domain.com" required />
+            </label>
+
+            <label>
+              Topic
+              <select name="topic">
+                <option value="General feedback">General feedback</option>
+                <option value="Technical question">Technical question</option>
+                <option value="Bug / issue in code">Bug / issue in code</option>
+                <option value="Book / paper comment">Book / paper comment</option>
+              </select>
+            </label>
+
+            <label>
+              Message
+              <textarea name="message" rows="6" placeholder="Free-form message; chat-style writing is fine."></textarea>
+            </label>
+
+            <button type="submit" class="btn primary full">Open email draft</button>
+            <p id="contact-status" class="form-status"></p>
+          </form>
+
+          <div class="panel-card">
+            <h3>Email flow</h3>
+            <ul class="bullet-list">
+              <li>Message is written in the form; a local email client opens with fields pre-filled.</li>
+              <li>Email arrives in the RFT inbox as a thread.</li>
+              <li>Replies keep the subject line, so each topic remains a long-term “chat”.</li>
+              <li>No external platforms or logins are involved; everything runs through email threading.</li>
+            </ul>
+            <p>
+              Feedback can also be submitted via GitHub Issues on this repository:
+            </p>
+            <p>
+              <a class="text-link" href="https://github.com/RenderedFrameTheory/RenderedFrameTheory.github.io/issues/new" target="_blank" rel="noopener noreferrer">
+                Open a GitHub feedback issue
               </a>
-              <span class="card-tag">books.apple.com</span>
-            </div>
-          </article>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERSHIPS -->
+    <section id="partnerships" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Partnerships & Deals</h2>
+          <p>
+            Channel for research collaborations, funding, licensing, hosted compute, or media work tied to Rendered Frame Theory.
+          </p>
+        </header>
+
+        <div class="grid-2">
+          <form id="partnership-form" class="form-card">
+            <h3>Partnership proposal</h3>
+
+            <label>
+              Name / Organisation
+              <input type="text" name="name" placeholder="Name, company, or group" required />
+            </label>
+
+            <label>
+              Contact email
+              <input type="email" name="email" placeholder="contact@organisation.com" required />
+            </label>
+
+            <label>
+              Proposal type
+              <select name="ptype">
+                <option value="Research collaboration">Research collaboration</option>
+                <option value="Funding / investment">Funding / investment</option>
+                <option value="Licensing / commercial use">Licensing / commercial use</option>
+                <option value="Media / interviews">Media / interviews</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+
+            <label>
+              Proposal summary
+              <textarea name="summary" rows="6" placeholder="Short, direct summary: target, offer, and timelines."></textarea>
+            </label>
+
+            <button type="submit" class="btn primary full">Open proposal email</button>
+            <p id="partnership-status" class="form-status"></p>
+          </form>
+
+          <div class="panel-card">
+            <h3>Partnership criteria</h3>
+            <ul class="bullet-list">
+              <li>Alignment with core RFT principles: truth-first, no gatekeeping, no IP theft.</li>
+              <li>Respect for existing Zenodo DOIs, SHA hashes, and legal protections.</li>
+              <li>Clear benefit for the development or validation of Rendered Frame Theory.</li>
+              <li>No interest in arrangements that bury data or results behind closed systems.</li>
+            </ul>
+            <p>
+              Large-scale proposals can request an NDA-based channel in the initial email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section id="support" class="section section-alt">
+      <div class="container">
+        <header class="section-header">
+          <h2>Support & Orientation</h2>
+          <p>
+            Channel for practical help: navigation through the material, code issues, and experiment reproduction.
+          </p>
+        </header>
+
+        <div class="grid-2">
+          <div class="panel-card">
+            <h3>Orientation</h3>
+            <ul class="bullet-list">
+              <li><strong>Initial reading:</strong> main Rendered Frame Theory book and the Paradigm Shift record.</li>
+              <li><strong>Code-focused work:</strong> primary GitHub repositories and Hugging Face Spaces.</li>
+              <li><strong>Research-focused work:</strong> Zenodo DOIs and citation structure.</li>
+              <li><strong>Exploratory questions:</strong> concise notes sent through the feedback channel.</li>
+            </ul>
+          </div>
+
+          <form id="support-form" class="form-card">
+            <h3>Support request</h3>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="example@domain.com" required />
+            </label>
+
+            <label>
+              Category
+              <select name="stype">
+                <option value="Where to start">Where to start</option>
+                <option value="Code / repo help">Code / repo help</option>
+                <option value="Understanding a paper">Understanding a paper</option>
+                <option value="Experiment / reproduction help">Experiment / reproduction help</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+
+            <label>
+              Details
+              <textarea name="details" rows="6" placeholder="Issue or question, written as concretely as possible."></textarea>
+            </label>
+
+            <button type="submit" class="btn ghost full">Open support email</button>
+            <p id="support-status" class="form-status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEGAL -->
+    <section id="legal" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Legal & Copyright Notice</h2>
+          <p>
+            All Rendered Frame Theory material is protected under UK law and international copyright treaties. 
+            No informal disclaimer or “no infringement intended” text removes liability for infringement.
+          </p>
+        </header>
+
+        <div class="grid-2">
+          <div class="panel-card">
+            <h3>Copyright status</h3>
+            <p>
+              All original text, equations, code, figures, symbols, and designs released under Rendered Frame Theory
+              are protected works. As a UK author, these works are protected by the 
+              Copyright, Designs and Patents Act 1988 and related legislation from the moment of creation.
+            </p>
+            <ul class="bullet-list">
+              <li>
+                Under the Berne Convention, copyright protection is automatic and does not depend on registration 
+                or formalities; protection applies in all Berne member countries. 
+              </li>
+              <li>
+                All rights are reserved unless a specific written licence is granted. Copying, distributing, adapting,
+                training models on, or commercially exploiting RFT materials without prior written permission is prohibited.
+              </li>
+              <li>
+                The legal consolidation record for RFT IP is publicly timestamped here:<br>
+                <a href="https://doi.org/10.5281/zenodo.17460107" target="_blank" rel="noopener noreferrer">
+                  Rendered Frame Theory (RFT) — Master IP & Legal Consolidation (2023–2025)
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="panel-card">
+            <h3>Infringement and penalties</h3>
+            <p>
+              Unauthorised use of Rendered Frame Theory material can trigger both civil and criminal consequences
+              under UK law. This includes unauthorised reproduction, distribution, public communication, or large-scale
+              commercial exploitation of infringing copies.
+            </p>
+            <ul class="bullet-list">
+              <li>
+                Civil remedies can include injunctions to stop use, orders to remove or destroy infringing copies,
+                damages or an account of profits, and recovery of legal costs.
+              </li>
+              <li>
+                Serious infringement carried out in the course of business (for example, making, importing, selling, 
+                distributing, or communicating infringing copies) can constitute a criminal offence under section 107 
+                of the Copyright, Designs and Patents Act 1988. 
+              </li>
+              <li>
+                For the most serious commercial offences, the maximum criminal penalty in the UK is up to 
+                <strong>10 years’ imprisonment and/or an unlimited fine</strong>, as recognised in government 
+                and legal guidance. 
+              </li>
+              <li>
+                Where appropriate, infringement may be pursued through civil action, private prosecution, and/or 
+                referral to enforcement authorities. Persistent, knowing infringement will be treated as deliberate
+                abuse, not an accident.
+              </li>
+            </ul>
+            <p class="legal-disclaimer">
+              This section summarises the legal position in plain terms. It is not personal legal advice; 
+              specific cases require advice from a qualified lawyer.
+            </p>
+          </div>
         </div>
       </div>
     </section>

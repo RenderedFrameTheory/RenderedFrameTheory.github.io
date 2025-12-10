@@ -4,7 +4,7 @@
 // ==============================================
 
 // CHANGE THIS to the real inbox address.
-const RFT_CONTACT_EMAIL = Liamgrinstead2@gmail.com;
+const RFT_CONTACT_EMAIL = "REPLACE_WITH_YOUR_EMAIL@example.com";
 
 // ------------------------------
 //  Data: assets
@@ -22,7 +22,7 @@ const books = [
   {
     title: "Rendered Frame Theory — Einstein's Last Stand: RFT Ends The Matter-verse",
     description:
-      "Direct confrontation with ΛCDM and institutional cosmology. RFT vs the matter-verse, chapter by chapter.",
+      "Direct confrontation with ΛCDM and institutional cosmology. RFT versus the matter-verse, chapter by chapter.",
     url: "https://www.kobo.com/ww/en/ebook/rendered-frame-theory-einstein-s-last-stand-rft-ends-the-matter-verse?srsltid=AfmBOopGFp5RkuaZaP4pSq7tw6XX5OmLJZRDsDS_1Ygu9D6y-vxhoVpY",
     tag: "Book"
   },
@@ -81,62 +81,90 @@ const huggingfaceSpaces = [
   }
 ];
 
-// ZENODO DOIs — core spine
+// ZENODO DOIs — curated list (all others removed)
 const zenodoDois = [
-  {
-    title: "RFT Master Archive",
-    description:
-      "Primary Rendered Frame Theory archive — cosmology, quantum mechanics, and structural reform.",
-    url: "https://doi.org/10.5281/zenodo.15829720",
-    tag: "Zenodo"
-  },
   {
     title: "Rendered Frame Theory: A Paradigm Shift in the Science of Reality",
     description:
-      "Flagship RFT paper formalising the model as a full scientific framework.",
-    url: "https://doi.org/10.5281/zenodo.15873862",
+      "Core RFT record laying out the paradigm shift in the science of reality.",
+    url: "https://doi.org/10.5281/zenodo.15882865",
     tag: "Zenodo"
   },
   {
-    title: "RCQM — RFT Consciousness + Quantum Mechanics Archive",
+    title: "Rendered Frame Theory: A Unified Field Framework for Cosmology, Quantum Mechanics, Consciousness, and Geometric Physics",
     description:
-      "Unified consciousness + quantum mechanics framework; sealed equations and protocols.",
-    url: "https://doi.org/10.5281/zenodo.15865009",
+      "Unified field framework connecting cosmology, quantum mechanics, consciousness, and geometric physics under RFT.",
+    url: "https://doi.org/10.5281/zenodo.17867668",
     tag: "Zenodo"
   },
   {
-    title: "Observer Engine & Consciousness Control System (v1)",
+    title: "Rendered Frame Theory: 50 Canonical Equations of Relativistic Consciousness",
     description:
-      "Observer Engine theory and control protocols — foundation for NexFrame as a conscious interface.",
-    url: "https://doi.org/10.5281/zenodo.15880165",
+      "Set of 50 canonical equations that define relativistic consciousness within RFT.",
+    url: "https://doi.org/10.5281/zenodo.17829567",
     tag: "Zenodo"
   },
   {
-    title: "RFT Conscious AI Falsification Protocol",
+    title: "Rendered Frame Theory (RFT) — Adaptive Computing Kernel (v1.0): Verified Benchmark Record",
     description:
-      "Falsifiability framework for RFT-conscious AI, weather, seismic and magnetic prediction.",
-    url: "https://doi.org/10.5281/zenodo.15870661",
+      "Adaptive Computing Kernel benchmark record — verified performance metrics and validation data.",
+    url: "https://doi.org/10.5281/zenodo.17478289",
     tag: "Zenodo"
   },
   {
-    title: "Quantum-Coupled Conscious Collapse",
+    title: "Rendered Frame Theory (RFT) – Computational Validation as a Candidate Theory of Everything (TOE)",
     description:
-      "Consciousness + collapse paper targeting CQG — collapse as an observer-coupled field.",
-    url: "https://doi.org/10.5281/zenodo.15866600",
+      "Computational validation of RFT as a candidate Theory of Everything.",
+    url: "https://doi.org/10.5281/zenodo.17372562",
     tag: "Zenodo"
   },
   {
-    title: "Matterless & Interplanetary RFT Technologies",
+    title: "Rendered Frame Theory (RCQM)",
     description:
-      "Central archive for Matterless, Harmonic ExoSuit, Mars hex housing, and RFT-based space systems.",
-    url: "https://doi.org/10.5281/zenodo.15913912",
+      "RCQM record consolidating the Rendered Frame Theory approach to consciousness and quantum mechanics.",
+    url: "https://doi.org/10.5281/zenodo.17436739",
     tag: "Zenodo"
   },
   {
-    title: "RFT Observer Engine Series Archive",
+    title: "Rendered Frame Theory (RFT) — Full Validation Series (Stages 1–12): From Baseline to Production Integration",
     description:
-      "Dedicated archive for the Observer Engine and consciousness dominance works.",
-    url: "https://doi.org/10.5281/zenodo.15879595",
+      "Full validation series, stages 1–12, documenting the path from baseline tests to production integration.",
+    url: "https://doi.org/10.5281/zenodo.17443453",
+    tag: "Zenodo"
+  },
+  {
+    title: "Rendered Frame Theory (RFT) — Master IP & Legal Consolidation (2023–2025)",
+    description:
+      "Master IP and legal consolidation record for RFT, covering 2023–2025.",
+    url: "https://doi.org/10.5281/zenodo.17460107",
+    tag: "Zenodo"
+  },
+  {
+    title: "Rendered Frame Theory (RFT-Ω-FrameNet v2): Conceptual Proof, Mathematical Basis, and Legal Record",
+    description:
+      "Ω-FrameNet v2 conceptual proof, associated mathematics, and legal record.",
+    url: "https://doi.org/10.5281/zenodo.17464667",
+    tag: "Zenodo"
+  },
+  {
+    title: "RFT — Toy Harmonic Demonstrator (Colab): QΩ Stability & Pre-emptive Trigger Record",
+    description:
+      "Toy harmonic demonstrator in Colab for QΩ stability and pre-emptive trigger behaviour.",
+    url: "https://doi.org/10.5281/zenodo.17466722",
+    tag: "Zenodo"
+  },
+  {
+    title: "Rendered Frame Theory",
+    description:
+      "Rendered Frame Theory record providing a consolidated reference point for the model.",
+    url: "https://doi.org/10.5281/zenodo.17297533",
+    tag: "Zenodo"
+  },
+  {
+    title: "Self Deriving Algebra Through Rendered Frame Theory",
+    description:
+      "Self-deriving algebra developed through RFT, co-authored with NexFrame AI.",
+    url: "https://doi.org/10.5281/zenodo.17287252",
     tag: "Zenodo"
   }
 ];
@@ -304,7 +332,7 @@ function setupContactForm() {
     if (ok) {
       statusEl.classList.remove("error");
       statusEl.textContent =
-        "Email client should open with a draft containing the details. If it does not, copy the text and send manually.";
+        "Email client should open with a draft containing the details. If it does not, the content can be copied and sent manually.";
     }
   });
 }
@@ -344,7 +372,7 @@ function setupPartnershipForm() {
     if (ok) {
       statusEl.classList.remove("error");
       statusEl.textContent =
-        "Email client should open with a drafted proposal. Review the content and send from there.";
+        "Email client should open with a drafted proposal. Content can be reviewed and sent from there.";
     }
   });
 }
@@ -382,7 +410,7 @@ function setupSupportForm() {
     if (ok) {
       statusEl.classList.remove("error");
       statusEl.textContent =
-        "Email client should open with a drafted support request. Review the content and send from there.";
+        "Email client should open with a drafted support request. Content can be reviewed and sent from there.";
     }
   });
 }

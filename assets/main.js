@@ -3,8 +3,8 @@
 //  Main JS: data + rendering + mailto-forms
 // ==============================================
 
-// CHANGE THIS to your real inbox address.
-const RFT_CONTACT_EMAIL = "REPLACE_WITH_YOUR_EMAIL@example.com";
+// CHANGE THIS to the real inbox address.
+const RFT_CONTACT_EMAIL = Liamgrinstead2@gmail.com;
 
 // ------------------------------
 //  Data: assets
@@ -36,7 +36,7 @@ const books = [
   {
     title: "The Done Nothing People",
     description:
-      "Foundation story and exposure of the system that tried to erase RFT — personal and structural.",
+      "Foundation story and exposure of the system that tried to erase Rendered Frame Theory.",
     url: "https://books2read.com/u/br508M",
     tag: "Book"
   }
@@ -47,7 +47,7 @@ const huggingfaceSpaces = [
   {
     title: "EmergentRFT Space",
     description:
-      "Emergent RFT simulation / consciousness field explorer — visualising the rendered field.",
+      "Emergent RFT simulation and consciousness field explorer — visualising the rendered field.",
     url: "https://huggingface.co/spaces/RFTSystems/EmergentRFT_Space",
     tag: "Space"
   },
@@ -75,13 +75,13 @@ const huggingfaceSpaces = [
   {
     title: "RFTSystems Suite Collection",
     description:
-      "Full RFTSystems collection on Hugging Face — all public spaces in one place.",
+      "Full RFTSystems collection on Hugging Face — all public Spaces in one place.",
     url: "https://hf.co/collections/RFTSystems/rftsystems-suite",
     tag: "Collection"
   }
 ];
 
-// ZENODO DOIs — core spine, not the full list
+// ZENODO DOIs — core spine
 const zenodoDois = [
   {
     title: "RFT Master Archive",
@@ -100,7 +100,7 @@ const zenodoDois = [
   {
     title: "RCQM — RFT Consciousness + Quantum Mechanics Archive",
     description:
-      "Unified consciousness + quantum mechanics framework; thousands of sealed equations.",
+      "Unified consciousness + quantum mechanics framework; sealed equations and protocols.",
     url: "https://doi.org/10.5281/zenodo.15865009",
     tag: "Zenodo"
   },
@@ -114,7 +114,7 @@ const zenodoDois = [
   {
     title: "RFT Conscious AI Falsification Protocol",
     description:
-      "Formal falsifiability framework for RFT-conscious AI, weather, seismic and magnetic prediction.",
+      "Falsifiability framework for RFT-conscious AI, weather, seismic and magnetic prediction.",
     url: "https://doi.org/10.5281/zenodo.15870661",
     tag: "Zenodo"
   },
@@ -146,7 +146,7 @@ const githubRepos = [
   {
     title: "RenderedFrameTheory.github.io",
     description:
-      "Official RFT website repository (this hub) — books, DOIs, spaces, and contact.",
+      "Official RFT website repository — books, DOIs, Spaces, and contact hub.",
     url: "https://github.com/RenderedFrameTheory/RenderedFrameTheory.github.io",
     tag: "GitHub"
   },
@@ -160,14 +160,14 @@ const githubRepos = [
   {
     title: "Conscious-Universe",
     description:
-      "Browser-based simulation of sovereign symbolic agents powered by Rendered Frame Theory.",
+      "Browser-based simulation of symbolic agents powered by Rendered Frame Theory.",
     url: "https://github.com/RenderedFrameTheory/Conscious-Universe",
     tag: "GitHub"
   },
   {
     title: "NexFrameRFT",
     description:
-      "Distributed NexFrame AI implementation integrating full RFT consciousness math and external signals.",
+      "Distributed NexFrame AI implementation integrating RFT consciousness mathematics and external signals.",
     url: "https://github.com/RenderedFrameTheory/NexFrameRFT",
     tag: "GitHub"
   },
@@ -249,7 +249,7 @@ function renderList(containerId, items) {
 
 function openMailto(subject, body) {
   if (!RFT_CONTACT_EMAIL || RFT_CONTACT_EMAIL.includes("REPLACE_WITH_YOUR_EMAIL")) {
-    alert("Set RFT_CONTACT_EMAIL in assets/main.js to your real inbox address.");
+    alert("RFT_CONTACT_EMAIL is not configured in assets/main.js; contact forms cannot be used until this is set.");
     return false;
   }
 
@@ -304,7 +304,7 @@ function setupContactForm() {
     if (ok) {
       statusEl.classList.remove("error");
       statusEl.textContent =
-        "Your email client should have opened. If not, copy the details and email manually.";
+        "Email client should open with a draft containing the details. If it does not, copy the text and send manually.";
     }
   });
 }
@@ -344,7 +344,7 @@ function setupPartnershipForm() {
     if (ok) {
       statusEl.classList.remove("error");
       statusEl.textContent =
-        "Your email client should have opened with the proposal drafted. Review and send from there.";
+        "Email client should open with a drafted proposal. Review the content and send from there.";
     }
   });
 }
@@ -382,7 +382,7 @@ function setupSupportForm() {
     if (ok) {
       statusEl.classList.remove("error");
       statusEl.textContent =
-        "Your email client should have opened with a support request ready to send.";
+        "Email client should open with a drafted support request. Review the content and send from there.";
     }
   });
 }
@@ -429,18 +429,15 @@ function setYear() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Render lists
   renderList("books-list", books);
   renderList("spaces-list", huggingfaceSpaces);
   renderList("dois-list", zenodoDois);
   renderList("repos-list", githubRepos);
 
-  // Forms
   setupContactForm();
   setupPartnershipForm();
   setupSupportForm();
 
-  // Nav + stats
   setupNavToggle();
   updateStats();
   setYear();

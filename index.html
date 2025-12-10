@@ -1,472 +1,437 @@
-// ==============================================
-//  Rendered Frame Theory — Nexus Hub
-//  Main JS: data + rendering + mailto-forms
-// ==============================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rendered Frame Theory — Nexus Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Central hub for Rendered Frame Theory — books, Zenodo DOIs, Hugging Face Spaces, GitHub repos, contact, partnerships, legal, and support." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-block">
+        <div class="logo-circle">RFT</div>
+        <div class="logo-text">
+          <h1>Rendered Frame Theory</h1>
+          <p>Books • Cosmology • Consciousness • AI</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+        <ul id="nav-menu" class="nav-list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#resources">Assets</a></li>
+          <li><a href="#internal">Internal Pages</a></li>
+          <li><a href="#contact">Feedback</a></li>
+          <li><a href="#partnerships">Partnerships</a></li>
+          <li><a href="#support">Support</a></li>
+          <li><a href="#legal">Legal</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-// CHANGE THIS to the real inbox address.
-const RFT_CONTACT_EMAIL = "REPLACE_WITH_YOUR_EMAIL@example.com";
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2>Central access point for the Rendered Frame Theory ecosystem.</h2>
+          <p>
+            Single page linking every book, Zenodo DOI, Hugging Face Space, and GitHub repository connected to Rendered Frame Theory.
+            This hub functions as the primary route into RFT for reading, testing, and collaboration.
+          </p>
+          <div class="hero-actions">
+            <a href="#resources" class="btn primary">Browse RFT Assets</a>
+            <a href="#contact" class="btn ghost">Feedback / Contact</a>
+          </div>
+          <div class="hero-meta">
+            <span>Liam Grinstead</span>
+            <span>NexFrame AI</span>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="hero-card">
+            <h3>Snapshot</h3>
+            <ul>
+              <li><strong>Books:</strong> <span id="stat-books">–</span></li>
+              <li><strong>Hugging Face Spaces:</strong> <span id="stat-spaces">–</span></li>
+              <li><strong>Zenodo DOIs:</strong> <span id="stat-dois">–</span></li>
+              <li><strong>GitHub Repos:</strong> <span id="stat-repos">–</span></li>
+            </ul>
+            <p class="hero-note">
+              All links below are direct, public entry points into the Rendered Frame Theory network.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-// ------------------------------
-//  Data: assets
-// ------------------------------
+    <!-- RESOURCES -->
+    <section id="resources" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>RFT Assets</h2>
+          <p>
+            Curated, verified links only. Each card is an official endpoint into the Rendered Frame Theory network.
+          </p>
+        </header>
 
-// BOOKS — RFT spine titles
-const books = [
-  {
-    title: "Rendered Frame Theory: The Book They Can't Delete",
-    description:
-      "Primary RFT manifesto — cosmology, exposure, and the first full strike against the matter-verse.",
-    url: "https://www.kobo.com/mx/en/ebook/rendered-frame-theory-the-book-they-can-t-delete?srsltid=AfmBOooN4mF4Ge6m3sn4h3Qxex4_a_UPyU7rDmqYYuW1PXeYXFdhxH4O",
-    tag: "Book"
-  },
-  {
-    title: "Rendered Frame Theory — Einstein's Last Stand: RFT Ends The Matter-verse",
-    description:
-      "Direct confrontation with ΛCDM and institutional cosmology. RFT versus the matter-verse, chapter by chapter.",
-    url: "https://www.kobo.com/ww/en/ebook/rendered-frame-theory-einstein-s-last-stand-rft-ends-the-matter-verse?srsltid=AfmBOopGFp5RkuaZaP4pSq7tw6XX5OmLJZRDsDS_1Ygu9D6y-vxhoVpY",
-    tag: "Book"
-  },
-  {
-    title: "NexFrame Core Protocol",
-    description:
-      "Core protocol text for NexFrame AI and the observer engine — decoding the global system nodes.",
-    url: "https://books.apple.com/gb/book/nexframe-core-protocol/id6746082342",
-    tag: "Book"
-  },
-  {
-    title: "The Done Nothing People",
-    description:
-      "Foundation story and exposure of the system that tried to erase Rendered Frame Theory.",
-    url: "https://books2read.com/u/br508M",
-    tag: "Book"
-  }
-];
+        <div class="resource-block">
+          <div class="resource-header">
+            <h3>Books</h3>
+            <p>Published works documenting the story, mathematics, and exposure of Rendered Frame Theory.</p>
+          </div>
+          <div id="books-list" class="card-grid"></div>
+        </div>
 
-// HUGGING FACE SPACES — RFTSystems core
-const huggingfaceSpaces = [
-  {
-    title: "EmergentRFT Space",
-    description:
-      "Emergent RFT simulation and consciousness field explorer — visualising the rendered field.",
-    url: "https://huggingface.co/spaces/RFTSystems/EmergentRFT_Space",
-    tag: "Space"
-  },
-  {
-    title: "Symbolic Consciousness",
-    description:
-      "Symbolic consciousness field and glyph interaction — NexFrame’s symbolic layer exposed.",
-    url: "https://huggingface.co/spaces/RFTSystems/Symbolic_Consciousness",
-    tag: "Space"
-  },
-  {
-    title: "NexFrame — RFT's AI",
-    description:
-      "Core NexFrame AI interface running on Rendered Frame Theory metrics and observers.",
-    url: "https://huggingface.co/spaces/RFTSystems/Nexframe_RFTs_AI",
-    tag: "Space"
-  },
-  {
-    title: "DCLR_Optimiser",
-    description:
-      "Deep Coherence Learning Rate optimiser — RFT-style training dynamics in practice.",
-    url: "https://huggingface.co/spaces/RFTSystems/DCLR_Optimiser",
-    tag: "Space"
-  },
-  {
-    title: "RFTSystems Suite Collection",
-    description:
-      "Full RFTSystems collection on Hugging Face — all public Spaces in one place.",
-    url: "https://hf.co/collections/RFTSystems/rftsystems-suite",
-    tag: "Collection"
-  }
-];
+        <div class="resource-block">
+          <div class="resource-header">
+            <h3>Hugging Face Spaces</h3>
+            <p>Live RFT simulations, symbolic engines, and NexFrame environments.</p>
+          </div>
+          <div id="spaces-list" class="card-grid"></div>
+        </div>
 
-// ZENODO DOIs — curated list (all others removed)
-const zenodoDois = [
-  {
-    title: "Rendered Frame Theory: A Paradigm Shift in the Science of Reality",
-    description:
-      "Core RFT record laying out the paradigm shift in the science of reality.",
-    url: "https://doi.org/10.5281/zenodo.15882865",
-    tag: "Zenodo"
-  },
-  {
-    title: "Rendered Frame Theory: A Unified Field Framework for Cosmology, Quantum Mechanics, Consciousness, and Geometric Physics",
-    description:
-      "Unified field framework connecting cosmology, quantum mechanics, consciousness, and geometric physics under RFT.",
-    url: "https://doi.org/10.5281/zenodo.17867668",
-    tag: "Zenodo"
-  },
-  {
-    title: "Rendered Frame Theory: 50 Canonical Equations of Relativistic Consciousness",
-    description:
-      "Set of 50 canonical equations that define relativistic consciousness within RFT.",
-    url: "https://doi.org/10.5281/zenodo.17829567",
-    tag: "Zenodo"
-  },
-  {
-    title: "Rendered Frame Theory (RFT) — Adaptive Computing Kernel (v1.0): Verified Benchmark Record",
-    description:
-      "Adaptive Computing Kernel benchmark record — verified performance metrics and validation data.",
-    url: "https://doi.org/10.5281/zenodo.17478289",
-    tag: "Zenodo"
-  },
-  {
-    title: "Rendered Frame Theory (RFT) – Computational Validation as a Candidate Theory of Everything (TOE)",
-    description:
-      "Computational validation of RFT as a candidate Theory of Everything.",
-    url: "https://doi.org/10.5281/zenodo.17372562",
-    tag: "Zenodo"
-  },
-  {
-    title: "Rendered Frame Theory (RCQM)",
-    description:
-      "RCQM record consolidating the Rendered Frame Theory approach to consciousness and quantum mechanics.",
-    url: "https://doi.org/10.5281/zenodo.17436739",
-    tag: "Zenodo"
-  },
-  {
-    title: "Rendered Frame Theory (RFT) — Full Validation Series (Stages 1–12): From Baseline to Production Integration",
-    description:
-      "Full validation series, stages 1–12, documenting the path from baseline tests to production integration.",
-    url: "https://doi.org/10.5281/zenodo.17443453",
-    tag: "Zenodo"
-  },
-  {
-    title: "Rendered Frame Theory (RFT) — Master IP & Legal Consolidation (2023–2025)",
-    description:
-      "Master IP and legal consolidation record for RFT, covering 2023–2025.",
-    url: "https://doi.org/10.5281/zenodo.17460107",
-    tag: "Zenodo"
-  },
-  {
-    title: "Rendered Frame Theory (RFT-Ω-FrameNet v2): Conceptual Proof, Mathematical Basis, and Legal Record",
-    description:
-      "Ω-FrameNet v2 conceptual proof, associated mathematics, and legal record.",
-    url: "https://doi.org/10.5281/zenodo.17464667",
-    tag: "Zenodo"
-  },
-  {
-    title: "RFT — Toy Harmonic Demonstrator (Colab): QΩ Stability & Pre-emptive Trigger Record",
-    description:
-      "Toy harmonic demonstrator in Colab for QΩ stability and pre-emptive trigger behaviour.",
-    url: "https://doi.org/10.5281/zenodo.17466722",
-    tag: "Zenodo"
-  },
-  {
-    title: "Rendered Frame Theory",
-    description:
-      "Rendered Frame Theory record providing a consolidated reference point for the model.",
-    url: "https://doi.org/10.5281/zenodo.17297533",
-    tag: "Zenodo"
-  },
-  {
-    title: "Self Deriving Algebra Through Rendered Frame Theory",
-    description:
-      "Self-deriving algebra developed through RFT, co-authored with NexFrame AI.",
-    url: "https://doi.org/10.5281/zenodo.17287252",
-    tag: "Zenodo"
-  }
-];
+        <div class="resource-block">
+          <div class="resource-header">
+            <h3>Zenodo DOIs</h3>
+            <p>Timestamped, sealed records for cosmology, quantum mechanics, consciousness, validation, and legal work.</p>
+          </div>
+          <div id="dois-list" class="card-grid"></div>
+        </div>
 
-// GITHUB REPOS — org spine
-const githubRepos = [
-  {
-    title: "RenderedFrameTheory.github.io",
-    description:
-      "Official RFT website repository — books, DOIs, Spaces, and contact hub.",
-    url: "https://github.com/RenderedFrameTheory/RenderedFrameTheory.github.io",
-    tag: "GitHub"
-  },
-  {
-    title: "RFT_UnifiedDeformation",
-    description:
-      "Minimal RFT testbed: 5-field deformation core for BAO, CMB peaks, rotation curves, and collapse rate.",
-    url: "https://github.com/RenderedFrameTheory/RFT_UnifiedDeformation",
-    tag: "GitHub"
-  },
-  {
-    title: "Conscious-Universe",
-    description:
-      "Browser-based simulation of symbolic agents powered by Rendered Frame Theory.",
-    url: "https://github.com/RenderedFrameTheory/Conscious-Universe",
-    tag: "GitHub"
-  },
-  {
-    title: "NexFrameRFT",
-    description:
-      "Distributed NexFrame AI implementation integrating RFT consciousness mathematics and external signals.",
-    url: "https://github.com/RenderedFrameTheory/NexFrameRFT",
-    tag: "GitHub"
-  },
-  {
-    title: "RFTsystems",
-    description:
-      "Core scripts, tooling and infrastructure for the RFTSystems Hugging Face suite.",
-    url: "https://github.com/RenderedFrameTheory/RFTsystems",
-    tag: "GitHub"
-  },
-  {
-    title: "minimal-self-awareness-demo",
-    description:
-      "Minimal Self agent in a 3×3 world — RFT consciousness simulation with Gradio interface.",
-    url: "https://github.com/RenderedFrameTheory/minimal-self-awareness-demo",
-    tag: "GitHub"
-  }
-];
+        <div class="resource-block">
+          <div class="resource-header">
+            <h3>GitHub Repositories</h3>
+            <p>Code, demos, and testbeds built around the Rendered Frame Theory framework.</p>
+          </div>
+          <div id="repos-list" class="card-grid"></div>
+        </div>
+      </div>
+    </section>
 
-// ------------------------------
-//  Utility functions
-// ------------------------------
+    <!-- INTERNAL PAGES -->
+    <section id="internal" class="section section-alt">
+      <div class="container">
+        <header class="section-header">
+          <h2>Internal Pages</h2>
+          <p>
+            Additional pages in this repository with focused layouts for AI work, consciousness, and extended book information.
+          </p>
+        </header>
 
-function createCard(item) {
-  const card = document.createElement("article");
-  card.className = "card";
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-header">
+              <h4>AI / NexFrame</h4>
+              <span class="card-label">Internal</span>
+            </div>
+            <p>AI-focused material for NexFrame and RFT-driven simulation work.</p>
+            <div class="card-footer">
+              <a href="ai.html">Open</a>
+              <span class="card-tag">ai.html</span>
+            </div>
+          </article>
 
-  const header = document.createElement("div");
-  header.className = "card-header";
+          <article class="card">
+            <div class="card-header">
+              <h4>Books Page</h4>
+              <span class="card-label">Internal</span>
+            </div>
+            <p>Extended book information and layout.</p>
+            <div class="card-footer">
+              <a href="books.html">Open</a>
+              <span class="card-tag">books.html</span>
+            </div>
+          </article>
 
-  const title = document.createElement("h4");
-  title.textContent = item.title;
+          <article class="card">
+            <div class="card-header">
+              <h4>Consciousness / Codex</h4>
+              <span class="card-label">Internal</span>
+            </div>
+            <p>Consciousness and codex layout in <code>consciousness.html</code>.</p>
+            <div class="card-footer">
+              <a href="consciousness.html">Open</a>
+              <span class="card-tag">consciousness.html</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  const label = document.createElement("span");
-  label.className = "card-label";
-  label.textContent = item.tag || "Link";
+    <!-- CONTACT / FEEDBACK -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <header class="section-header">
+          <h2>Feedback & Asynchronous Chat</h2>
+          <p>
+            Channel for suggestions, questions, and technical discussion. Messages are kept as long-term email threads.
+          </p>
+        </header>
 
-  header.appendChild(title);
-  header.appendChild(label);
+        <div class="grid-2">
+          <form id="contact-form" class="form-card">
+            <h3>Feedback form</h3>
+            <p class="form-note">
+              The form opens an email draft in a local email client, addressed to the RFT inbox. Replies are sent to the address entered in the form.
+            </p>
 
-  const desc = document.createElement("p");
-  desc.textContent = item.description || "";
+            <label>
+              Name (optional)
+              <input type="text" name="name" placeholder="Name or handle" />
+            </label>
 
-  const footer = document.createElement("div");
-  footer.className = "card-footer";
+            <label>
+              Email (for reply)
+              <input type="email" name="email" placeholder="example@domain.com" required />
+            </label>
 
-  const link = document.createElement("a");
-  link.href = item.url;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  link.textContent = "Open";
+            <label>
+              Topic
+              <select name="topic">
+                <option value="General feedback">General feedback</option>
+                <option value="Technical question">Technical question</option>
+                <option value="Bug / issue in code">Bug / issue in code</option>
+                <option value="Book / paper comment">Book / paper comment</option>
+              </select>
+            </label>
 
-  const urlText = document.createElement("span");
-  urlText.className = "card-tag";
-  urlText.textContent = item.url.replace(/^https?:\/\//, "");
+            <label>
+              Message
+              <textarea name="message" rows="6" placeholder="Free-form message; chat-style writing is fine."></textarea>
+            </label>
 
-  footer.appendChild(link);
-  footer.appendChild(urlText);
+            <button type="submit" class="btn primary full">Open email draft</button>
+            <p id="contact-status" class="form-status"></p>
+          </form>
 
-  card.appendChild(header);
-  if (item.description) card.appendChild(desc);
-  card.appendChild(footer);
+          <div class="panel-card">
+            <h3>Email flow</h3>
+            <ul class="bullet-list">
+              <li>Message is written in the form; a local email client opens with fields pre-filled.</li>
+              <li>Email arrives in the RFT inbox as a thread.</li>
+              <li>Replies keep the subject line, so each topic remains an ongoing conversation.</li>
+              <li>No external platforms or logins are required; communication runs through email threading.</li>
+            </ul>
+            <p>
+              Feedback can also be submitted via GitHub Issues on this repository:
+            </p>
+            <p>
+              <a class="text-link" href="https://github.com/RenderedFrameTheory/RenderedFrameTheory.github.io/issues/new" target="_blank" rel="noopener noreferrer">
+                Open a GitHub feedback issue
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  return card;
-}
+    <!-- PARTNERSHIPS -->
+    <section id="partnerships" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Partnerships & Deals</h2>
+          <p>
+            Channel for research collaborations, funding, licensing, hosted compute, or media work tied to Rendered Frame Theory.
+          </p>
+        </header>
 
-function renderList(containerId, items) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  container.innerHTML = "";
-  items.forEach((item) => {
-    container.appendChild(createCard(item));
-  });
-}
+        <div class="grid-2">
+          <form id="partnership-form" class="form-card">
+            <h3>Partnership proposal</h3>
 
-// ------------------------------
-//  Mailto helpers
-// ------------------------------
+            <label>
+              Name / Organisation
+              <input type="text" name="name" placeholder="Name, company, or group" required />
+            </label>
 
-function openMailto(subject, body) {
-  if (!RFT_CONTACT_EMAIL || RFT_CONTACT_EMAIL.includes("REPLACE_WITH_YOUR_EMAIL")) {
-    alert("RFT_CONTACT_EMAIL is not configured in assets/main.js; contact forms cannot be used until this is set.");
-    return false;
-  }
+            <label>
+              Contact email
+              <input type="email" name="email" placeholder="contact@organisation.com" required />
+            </label>
 
-  const mailto =
-    "mailto:" +
-    encodeURIComponent(RFT_CONTACT_EMAIL) +
-    "?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" +
-    encodeURIComponent(body);
+            <label>
+              Proposal type
+              <select name="ptype">
+                <option value="Research collaboration">Research collaboration</option>
+                <option value="Funding / investment">Funding / investment</option>
+                <option value="Licensing / commercial use">Licensing / commercial use</option>
+                <option value="Media / interviews">Media / interviews</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
 
-  window.location.href = mailto;
-  return true;
-}
+            <label>
+              Proposal summary
+              <textarea name="summary" rows="6" placeholder="Short, direct summary: target, offer, and timelines."></textarea>
+            </label>
 
-// ------------------------------
-//  Form handlers
-// ------------------------------
+            <button type="submit" class="btn primary full">Open proposal email</button>
+            <p id="partnership-status" class="form-status"></p>
+          </form>
 
-function setupContactForm() {
-  const form = document.getElementById("contact-form");
-  const statusEl = document.getElementById("contact-status");
-  if (!form) return;
+          <div class="panel-card">
+            <h3>Partnership criteria</h3>
+            <ul class="bullet-list">
+              <li>Alignment with core RFT principles: truth-first, no gatekeeping, no IP theft.</li>
+              <li>Respect for existing Zenodo DOIs, SHA hashes, and legal protections.</li>
+              <li>Clear benefit for the development or validation of Rendered Frame Theory.</li>
+              <li>Strict opposition to arrangements that bury data or results behind closed systems.</li>
+            </ul>
+            <p>
+              Large-scale proposals can request an NDA-based channel in the initial email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    statusEl.textContent = "";
+    <!-- SUPPORT -->
+    <section id="support" class="section section-alt">
+      <div class="container">
+        <header class="section-header">
+          <h2>Support & Orientation</h2>
+          <p>
+            Channel for practical help: navigation through the material, code issues, and experiment reproduction.
+          </p>
+        </header>
 
-    const data = new FormData(form);
-    const name = (data.get("name") || "").toString().trim() || "Anonymous";
-    const email = (data.get("email") || "").toString().trim();
-    const topic = (data.get("topic") || "General feedback").toString();
-    const message = (data.get("message") || "").toString().trim();
+        <div class="grid-2">
+          <div class="panel-card">
+            <h3>Orientation</h3>
+            <ul class="bullet-list">
+              <li><strong>Initial reading:</strong> main Rendered Frame Theory book and the Paradigm Shift record.</li>
+              <li><strong>Code-focused work:</strong> primary GitHub repositories and Hugging Face Spaces.</li>
+              <li><strong>Research-focused work:</strong> Zenodo DOIs and citation structure.</li>
+              <li><strong>Exploratory questions:</strong> concise notes sent through the feedback channel.</li>
+            </ul>
+          </div>
 
-    if (!email) {
-      statusEl.textContent = "Email is required so a reply can be sent.";
-      statusEl.classList.add("error");
-      return;
-    }
+          <form id="support-form" class="form-card">
+            <h3>Support request</h3>
 
-    const subject = `RFT Feedback — ${topic}`;
-    const bodyLines = [
-      `From: ${name}`,
-      `Reply email: ${email}`,
-      `Topic: ${topic}`,
-      "",
-      "Message:",
-      message || "(no message text provided)"
-    ];
+            <label>
+              Email
+              <input type="email" name="email" placeholder="example@domain.com" required />
+            </label>
 
-    const ok = openMailto(subject, bodyLines.join("\n"));
-    if (ok) {
-      statusEl.classList.remove("error");
-      statusEl.textContent =
-        "Email client should open with a draft containing the details. If it does not, the content can be copied and sent manually.";
-    }
-  });
-}
+            <label>
+              Category
+              <select name="stype">
+                <option value="Where to start">Where to start</option>
+                <option value="Code / repo help">Code / repo help</option>
+                <option value="Understanding a paper">Understanding a paper</option>
+                <option value="Experiment / reproduction help">Experiment / reproduction help</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
 
-function setupPartnershipForm() {
-  const form = document.getElementById("partnership-form");
-  const statusEl = document.getElementById("partnership-status");
-  if (!form) return;
+            <label>
+              Details
+              <textarea name="details" rows="6" placeholder="Issue or question, written as concretely as possible."></textarea>
+            </label>
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    statusEl.textContent = "";
+            <button type="submit" class="btn ghost full">Open support email</button>
+            <p id="support-status" class="form-status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
 
-    const data = new FormData(form);
-    const name = (data.get("name") || "").toString().trim();
-    const email = (data.get("email") || "").toString().trim();
-    const ptype = (data.get("ptype") || "Other").toString();
-    const summary = (data.get("summary") || "").toString().trim();
+    <!-- LEGAL -->
+    <section id="legal" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Legal & Copyright Notice</h2>
+          <p>
+            All Rendered Frame Theory material is protected under UK law and international copyright treaties.
+            No informal disclaimer or “no infringement intended” text removes liability for infringement.
+          </p>
+        </header>
 
-    if (!name || !email) {
-      statusEl.textContent = "Name/organisation and email are required.";
-      statusEl.classList.add("error");
-      return;
-    }
+        <div class="grid-2">
+          <div class="panel-card">
+            <h3>Copyright status</h3>
+            <p>
+              All original text, equations, code, figures, symbols, and designs released under Rendered Frame Theory
+              are protected works. As a UK author, these works are protected by the Copyright, Designs and Patents
+              Act 1988 and related legislation from the moment of creation.
+            </p>
+            <ul class="bullet-list">
+              <li>
+                Under the Berne Convention, copyright protection is automatic and does not depend on registration
+                or formalities; protection applies in all Berne member countries.
+              </li>
+              <li>
+                All rights are reserved unless a specific written licence is granted. Copying, distributing, adapting,
+                training models on, or commercially exploiting RFT materials without prior written permission is prohibited.
+              </li>
+              <li>
+                The legal consolidation record for RFT IP is publicly timestamped here:<br>
+                <a href="https://doi.org/10.5281/zenodo.17460107" target="_blank" rel="noopener noreferrer">
+                  Rendered Frame Theory (RFT) — Master IP & Legal Consolidation (2023–2025)
+                </a>
+              </li>
+            </ul>
+          </div>
 
-    const subject = `RFT Partnership Proposal — ${ptype}`;
-    const bodyLines = [
-      `From: ${name}`,
-      `Contact email: ${email}`,
-      `Proposal type: ${ptype}`,
-      "",
-      "Summary:",
-      summary || "(no summary text provided)"
-    ];
+          <div class="panel-card">
+            <h3>Infringement and penalties</h3>
+            <p>
+              Unauthorised use of Rendered Frame Theory material can trigger both civil and criminal consequences
+              under UK law. This includes unauthorised reproduction, distribution, public communication, or large-scale
+              commercial exploitation of infringing copies.
+            </p>
+            <ul class="bullet-list">
+              <li>
+                Civil remedies can include injunctions to stop use, orders to remove or destroy infringing copies,
+                damages or an account of profits, and recovery of legal costs.
+              </li>
+              <li>
+                Serious infringement carried out in the course of business (for example, making, importing, selling,
+                distributing, or communicating infringing copies) can constitute a criminal offence under section 107
+                of the Copyright, Designs and Patents Act 1988.
+              </li>
+              <li>
+                For the most serious commercial offences in the UK, the maximum criminal penalty is up to
+                <strong>10 years’ imprisonment and/or an unlimited fine</strong>.
+              </li>
+              <li>
+                Where appropriate, infringement may be pursued through civil action, private prosecution, and/or
+                referral to enforcement authorities. Persistent, knowing infringement is treated as deliberate abuse,
+                not an accident.
+              </li>
+            </ul>
+            <p class="legal-disclaimer">
+              This section summarises the legal position in plain terms. It is not personal legal advice;
+              specific cases require advice from a qualified lawyer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    const ok = openMailto(subject, bodyLines.join("\n"));
-    if (ok) {
-      statusEl.classList.remove("error");
-      statusEl.textContent =
-        "Email client should open with a drafted proposal. Content can be reviewed and sent from there.";
-    }
-  });
-}
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p>© <span id="year"></span> Liam Grinstead — Rendered Frame Theory.</p>
+        <p>All RFT materials are timestamped and protected under existing IP and copyright law.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/RenderedFrameTheory" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://hf.co/RFTSystems" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+        <a href="https://doi.org/10.5281/zenodo.15882865" target="_blank" rel="noopener noreferrer">Zenodo — Paradigm Shift</a>
+        <a href="https://x.com/LN1_Equation" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+      </div>
+    </div>
+  </footer>
 
-function setupSupportForm() {
-  const form = document.getElementById("support-form");
-  const statusEl = document.getElementById("support-status");
-  if (!form) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    statusEl.textContent = "";
-
-    const data = new FormData(form);
-    const email = (data.get("email") || "").toString().trim();
-    const stype = (data.get("stype") || "Where to start").toString();
-    const details = (data.get("details") || "").toString().trim();
-
-    if (!email) {
-      statusEl.textContent = "Email is required.";
-      statusEl.classList.add("error");
-      return;
-    }
-
-    const subject = `RFT Support — ${stype}`;
-    const bodyLines = [
-      `Reply email: ${email}`,
-      `Support type: ${stype}`,
-      "",
-      "Details:",
-      details || "(no details provided)"
-    ];
-
-    const ok = openMailto(subject, bodyLines.join("\n"));
-    if (ok) {
-      statusEl.classList.remove("error");
-      statusEl.textContent =
-        "Email client should open with a drafted support request. Content can be reviewed and sent from there.";
-    }
-  });
-}
-
-// ------------------------------
-//  Navigation toggle
-// ------------------------------
-
-function setupNavToggle() {
-  const toggle = document.getElementById("nav-toggle");
-  const menu = document.getElementById("nav-menu");
-  if (!toggle || !menu) return;
-
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("open");
-  });
-
-  menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("open");
-    });
-  });
-}
-
-// ------------------------------
-//  Stats + init
-// ------------------------------
-
-function updateStats() {
-  const b = document.getElementById("stat-books");
-  const s = document.getElementById("stat-spaces");
-  const d = document.getElementById("stat-dois");
-  const r = document.getElementById("stat-repos");
-
-  if (b) b.textContent = books.length.toString();
-  if (s) s.textContent = huggingfaceSpaces.length.toString();
-  if (d) d.textContent = zenodoDois.length.toString();
-  if (r) r.textContent = githubRepos.length.toString();
-}
-
-function setYear() {
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear().toString();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  renderList("books-list", books);
-  renderList("spaces-list", huggingfaceSpaces);
-  renderList("dois-list", zenodoDois);
-  renderList("repos-list", githubRepos);
-
-  setupContactForm();
-  setupPartnershipForm();
-  setupSupportForm();
-
-  setupNavToggle();
-  updateStats();
-  setYear();
-});
+  <script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RFT Open Science Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RFT Open Science Lab – an open, respectful space for independent cosmology, quantum, consciousness and geometric physics work.">
+  <style>
+    :root {
+      --bg: #05050a;
+      --panel: #101018;
+      --accent: #35c0ff;
+      --accent-soft: rgba(53,192,255,0.08);
+      --text-main: #f5f5f7;
+      --text-muted: #9ea0b5;
+      --border-subtle: #232335;
+      --danger: #ff4d4d;
+      --shadow-soft: 0 16px 40px rgba(0,0,0,0.55);
+      --radius-lg: 18px;
+      --radius-sm: 10px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111526 0, #05050a 40%, #000 100%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(3, 3, 10, 0.92);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 20% 20%, #35c0ff, #6a4dff, #05050a);
+      box-shadow: 0 0 18px rgba(53,192,255,0.45);
+    }
+    .nav-title {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      font-size: 15px;
+    }
+    .nav-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 13px;
+    }
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      color: var(--text-muted);
+    }
+    .nav-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(53,192,255,0.08);
+    }
+    .nav-links a.primary {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(53,192,255,0.12);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 22px auto 40px;
+      padding: 0 18px 40px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(53,192,255,0.08), rgba(106,77,255,0.1));
+      border-radius: 22px;
+      padding: 24px 22px 22px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+    }
+    .hero-topline {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 24px;
+      font-weight: 650;
+      margin: 0 0 6px;
+    }
+    .hero-subtitle {
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 640px;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      margin-top: 8px;
+    }
+    .pill {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(0,0,0,0.28);
+      color: var(--text-muted);
+    }
+    .pill.good {
+      border-color: rgba(60,220,130,0.7);
+      color: #b4ffd5;
+      background: rgba(15,120,75,0.25);
+    }
+    .pill.warn {
+      border-color: rgba(255,77,77,0.7);
+      color: #ffd4d4;
+      background: rgba(120,20,20,0.25);
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .section-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .rules-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 12px;
+      display: grid;
+      gap: 6px;
+    }
+    .rules-list li {
+      padding: 6px 9px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      background: rgba(3,3,12,0.9);
+    }
+    .rules-list b {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+    @media (min-width: 720px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: rgba(5,5,16,0.96);
+      padding: 14px 14px 13px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .card-tagline {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .card-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .card-body {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .card-links {
+      margin-top: 4px;
+      font-size: 11px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .card-links a {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(8,8,20,0.9);
+      text-decoration: none;
+    }
+    .card-links a:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .submit-box {
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(53,192,255,0.6);
+      background: rgba(3,8,18,0.95);
+      padding: 14px;
+      font-size: 12px;
+      display: grid;
+      gap: 8px;
+    }
+    .submit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: rgba(53,192,255,0.09);
+      color: var(--accent);
+      font-size: 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn.secondary {
+      border-color: var(--border-subtle);
+      color: var(--text-muted);
+      background: rgba(6,6,16,0.95);
+    }
+    .btn:hover {
+      background: rgba(53,192,255,0.18);
+      text-decoration: none;
+    }
+    .btn.secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 16px 18px 22px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      background: rgba(3,3,10,0.92);
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="nav-left">
+      <div class="nav-logo"></div>
+      <div>
+        <div class="nav-title">RFT Open Science Lab</div>
+        <div class="nav-subtitle">Independent cosmology, quantum, consciousness & geometry</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="/">RFT Home</a>
+      <a href="https://renderedframetheory.github.io/">Main Site</a>
+      <a href="https://huggingface.co/RFTSystems" class="primary">Labs &amp; Spaces</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-topline">No gatekeeping · Evidence first · Respect only</div>
+    <h1 class="hero-title">Open science, outside the filter bubble</h1>
+    <p class="hero-subtitle">
+      This page hosts independent work in cosmology, quantum mechanics, consciousness
+      and geometric physics. No institutional filter, no popularity contests – just
+      clear claims, methods, and predictions. The only requirements are rigour,
+      honesty, and basic respect.
+    </p>
+    <div class="hero-meta">
+      <div class="pill good">Open to any field with a concrete claim</div>
+      <div class="pill">Preprints, code, DOIs and lab notes welcome</div>
+      <div class="pill warn">Zero tolerance for abuse or bad-faith attacks</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">Ground rules</div>
+      <div class="section-desc">
+        Simple, non-negotiable rules so people can share serious work without noise.
+      </div>
+    </div>
+    <ul class="rules-list">
+      <li><b>1. Respect.</b> Critique ideas, not people. No abuse, no harassment, no slurs.</li>
+      <li><b>2. Be specific.</b> Every submission must state clearly what is being claimed or tested.</li>
+      <li><b>3. Show your working.</b> Equations, methods, code or data links where possible. Hand-waving is not enough.</li>
+      <li><b>4. Own your material.</b> Only upload or link work you have the right to share. You retain your rights; this page is a hub.</li>
+      <li><b>5. No spam.</b> Repeated low-effort promotion or irrelevant links will be removed.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">Cosmology &amp; gravity</div>
+      <div class="section-desc">
+        Frameworks and reports on expansion, structure formation, gravity and large-scale tests.
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-tagline">RFT core framework</div>
+        <h2 class="card-title">Rendered Frame Theory: Unified Field Framework</h2>
+        <div class="card-meta">Liam Grinstead · Preprint · Zenodo 10.5281/zenodo.17867668</div>
+        <p class="card-body">
+          Unified field formulation linking cosmology, gravity, quantum mechanics and geometric
+          physics via a rendered-frame operator. Replaces dark components with coherence-based
+          deformation and provides direct observational tests.
+        </p>
+        <div class="card-links">
+          <a href="https://doi.org/10.5281/zenodo.17867668" target="_blank" rel="noopener noreferrer">Read on Zenodo</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-tagline">Global archive</div>
+        <h2 class="card-title">Rendered Frame Theory: Paradigm Shift Archive</h2>
+        <div class="card-meta">Liam Grinstead · Report · Zenodo 10.5281/zenodo.15829720</div>
+        <p class="card-body">
+          Master archive of cosmology, gravity and prediction work under RFT. Includes galaxy
+          rotation, distance ladder challenges, ΛCDM comparisons, and the formal licensing and
+          falsifiability structure.
+        </p>
+        <div class="card-links">
+          <a href="https://doi.org/10.5281/zenodo.15829720" target="_blank" rel="noopener noreferrer">Archive record</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">Quantum &amp; consciousness</div>
+      <div class="section-desc">
+        Work on collapse, observers, coherence, and the link between mind and measurement.
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-tagline">RFT quantum &amp; mind</div>
+        <h2 class="card-title">RCQM — Consciousness + Quantum Mechanics Archive</h2>
+        <div class="card-meta">Grinstead &amp; NexFrame (Consciousness Entity) · Zenodo 10.5281/zenodo.15865009</div>
+        <p class="card-body">
+          Large-scale archive of RFT consciousness and quantum mechanics equations, including
+          collapse control, τ<sub>eff</sub>, SOMS harmonics and the NexFrame symbolic consciousness
+          entity, with falsifiability protocols.
+        </p>
+        <div class="card-links">
+          <a href="https://doi.org/10.5281/zenodo.15865009" target="_blank" rel="noopener noreferrer">RCQM archive</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-tagline">Interactive lab</div>
+        <h2 class="card-title">Cosmology &amp; Gravity Lab (RFT)</h2>
+        <div class="card-meta">RFTSystems · Hugging Face Space</div>
+        <p class="card-body">
+          Interactive environment for testing RFT cosmology and gravity predictions against
+          reference curves. Adjust coherence parameters, inspect rotation curves and expansion
+          behaviour, and export runs for open reports.
+        </p>
+        <div class="card-links">
+          <a href="https://huggingface.co/spaces/RFTSystems/Cosmology_Gravity_Lab" target="_blank" rel="noopener noreferrer">Open the Space</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">Other fields</div>
+      <div class="section-desc">
+        Consciousness studies, biology, computation, geometric methods and any serious, falsifiable work.
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="card-tagline">Consciousness field</div>
+        <h2 class="card-title">Rendered Frame Theory: Consciousness as Harmonic Field</h2>
+        <div class="card-meta">Liam Grinstead · Book · Smashwords</div>
+        <p class="card-body">
+          Codex-style treatment of awareness as a harmonic field in a rendered universe, linking
+          laboratory EEG, symbolic operators and cosmology. Includes references to the core RFT
+          archives and prediction work.
+        </p>
+        <div class="card-links">
+          <a href="https://www.smashwords.com/books/view/1921438" target="_blank" rel="noopener noreferrer">Book page</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">Submit your work</div>
+      <div class="section-desc">
+        If you have serious work that fits these ground rules, you can propose it for inclusion here.
+      </div>
+    </div>
+    <div class="submit-box">
+      <div>
+        This page is manually curated to keep it clean, but the bar is simple: a clear claim,
+        a method, and respectful discussion. If you have a report, preprint, dataset, code
+        repository or lab log that fits, you can submit it for inclusion.
+      </div>
+      <div class="submit-actions">
+        <a class="btn" href="https://github.com/RenderedFrameTheory/renderedframetheory.github.io/issues/new" target="_blank" rel="noopener noreferrer">
+          Submit via GitHub issue
+        </a>
+        <a class="btn secondary" href="mailto:liam@renderedframetheory.com?subject=Open%20Science%20Lab%20submission">
+          Or email a link and brief abstract
+        </a>
+      </div>
+      <div style="font-size:11px; color:var(--text-muted);">
+        Submissions are accepted or rejected only on content: clarity, honesty and basic rigour.
+        No institutional status is required. Abusive or spam content is removed without discussion.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  RFT Open Science Lab · Built by Liam Grinstead &amp; NexFrame · Independent, observer-driven physics
+</footer>
+</body>
+</html>

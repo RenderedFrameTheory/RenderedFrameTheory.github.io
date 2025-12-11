@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Help Build Rendered Frame Theory — RFT Collaboration Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Help advance Rendered Frame Theory by contributing ideas, parameters, and critiques to live experiments such as the Mutation Agent. Weekly demo runs with community input.">
+  <style>
+    :root {
+      --bg: #05050a;
+      --panel: #101018;
+      --accent: #35c0ff;
+      --accent-soft: rgba(53,192,255,0.08);
+      --text-main: #f5f5f7;
+      --text-muted: #9ea0b5;
+      --border-subtle: #232335;
+      --danger: #ff4d4d;
+      --shadow-soft: 0 16px 40px rgba(0,0,0,0.55);
+      --radius-lg: 18px;
+      --radius-sm: 10px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111526 0, #05050a 40%, #000 100%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(3, 3, 10, 0.92);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 20% 20%, #35c0ff, #6a4dff, #05050a);
+      box-shadow: 0 0 18px rgba(53,192,255,0.45);
+    }
+    .nav-title {
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      font-size: 15px;
+    }
+    .nav-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 13px;
+    }
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      color: var(--text-muted);
+    }
+    .nav-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(53,192,255,0.08);
+    }
+    .nav-links a.primary {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(53,192,255,0.12);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 22px auto 40px;
+      padding: 0 18px 40px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, rgba(53,192,255,0.08), rgba(106,77,255,0.1));
+      border-radius: 22px;
+      padding: 24px 22px 22px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+    }
+    .hero-topline {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: 24px;
+      font-weight: 650;
+      margin: 0 0 6px;
+    }
+    .hero-subtitle {
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 680px;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      margin-top: 8px;
+    }
+    .pill {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(0,0,0,0.28);
+      color: var(--text-muted);
+    }
+    .pill.good {
+      border-color: rgba(60,220,130,0.7);
+      color: #b4ffd5;
+      background: rgba(15,120,75,0.25);
+    }
+    .pill.warn {
+      border-color: rgba(255,77,77,0.7);
+      color: #ffd4d4;
+      background: rgba(120,20,20,0.25);
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .section-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 8px;
+      font-size: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .steps li {
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      background: rgba(3,3,12,0.9);
+    }
+    .steps b {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+    @media (min-width: 720px) {
+      .grid {
+        grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: rgba(5,5,16,0.96);
+      padding: 14px 14px 13px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .card-tagline {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .card-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .card-body {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .card-body code {
+      font-size: 11px;
+      background: rgba(10,10,22,0.9);
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+    .card-links {
+      margin-top: 4px;
+      font-size: 11px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .card-links a {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(8,8,20,0.9);
+      text-decoration: none;
+    }
+    .card-links a:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .submit-box {
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(53,192,255,0.6);
+      background: rgba(3,8,18,0.95);
+      padding: 14px;
+      font-size: 12px;
+      display: grid;
+      gap: 8px;
+    }
+    .submit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: rgba(53,192,255,0.09);
+      color: var(--accent);
+      font-size: 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn.secondary {
+      border-color: var(--border-subtle);
+      color: var(--text-muted);
+      background: rgba(6,6,16,0.95);
+    }
+    .btn:hover {
+      background: rgba(53,192,255,0.18);
+      text-decoration: none;
+    }
+    .btn.secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .log-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-top: 8px;
+    }
+    .log-table th,
+    .log-table td {
+      border: 1px solid var(--border-subtle);
+      padding: 6px 7px;
+      text-align: left;
+    }
+    .log-table th {
+      background: rgba(8,8,22,0.95);
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .log-table td {
+      background: rgba(3,3,12,0.95);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 16px 18px 22px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      background: rgba(3,3,10,0.92);
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="nav-left">
+      <div class="nav-logo"></div>
+      <div>
+        <div class="nav-title">RFT Collaboration Lab</div>
+        <div class="nav-subtitle">Help build Rendered Frame Theory with live experiments</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="/">RFT Home</a>
+      <a href="open-science.html">Open Science Lab</a>
+      <a href="https://huggingface.co/RFTSystems" class="primary">Labs &amp; Spaces</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-topline">Co-create · Test · Challenge</div>
+    <h1 class="hero-title">Help advance Rendered Frame Theory</h1>
+    <p class="hero-subtitle">
+      This page is the working floor for RFT. Here we document live experiments
+      (such as the Mutation Agent), take community parameter suggestions, and
+      run scheduled demo simulations where your input is actually used. No
+      spectators only — this is for people who want to push, test and refine.
+    </p>
+    <div class="hero-meta">
+      <div class="pill good">Community input directly into RFT experiments</div>
+      <div class="pill">Weekly demo runs with public logs</div>
+      <div class="pill warn">No hype, no abuse – only concrete suggestions</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">How this works</div>
+      <div class="section-desc">
+        A simple pipeline: define the experiment, collect inputs, run, publish results.
+      </div>
+    </div>
+    <ul class="steps">
+      <li><b>1. Active experiment.</b> We publish the current RFT experiment focus,
+          including a short description, key equations/parameters, and what we are trying to measure.</li>
+      <li><b>2. Community input.</b> You propose parameter sets, mutations, constraints,
+          or critiques via GitHub or email. The more precise, the better.</li>
+      <li><b>3. Weekly demo run.</b> On a fixed day each week, a batch run is executed
+          using a selection of community inputs, and summary stats/plots are posted here or linked from a lab.</li>
+      <li><b>4. Feedback loop.</b> Results feed back into RFT equations, future experiments,
+          and updated demos. Good ideas get absorbed; weak ones are documented and dropped.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">Current focus: Mutation Agent / Self-Deciding Brain</div>
+      <div class="section-desc">
+        Symbolic civilisation agent that mutates, learns and stabilises under RFT resource and coherence constraints.
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="card-tagline">Experiment spec</div>
+        <h2 class="card-title">RFT Mutation Agent</h2>
+        <div class="card-meta">Self-deciding, resource-limited symbolic agent · RFTSystems</div>
+        <p class="card-body">
+          The Mutation Agent is a high-dimensional symbolic agent that balances exploration,
+          stability and resource cost. It mutates internal glyphs and decision rules while
+          tracking a coherence metric <code>kappa</code>, resource level, and "awakening phase"
+          states linked to RFT parameters such as <code>\u03C4_eff</code> and <code>P_max</code>.
+        </p>
+        <p class="card-body">
+          Core aims:
+          <br>· Discover conditions where coherent, self-initiated behaviour emerges without collapsing into noise.
+          <br>· Map how resource penalties and mutation scales affect long-term stability.
+          <br>· Identify parameter regimes that align with RFT consciousness and computation limits.
+        </p>
+        <div class="card-links">
+          <a href="https://huggingface.co/spaces/RFTSystems" target="_blank" rel="noopener noreferrer">RFTSystems Spaces</a>
+          <a href="https://doi.org/10.5281/zenodo.17867668" target="_blank" rel="noopener noreferrer">Unified Field Framework</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-tagline">Your role</div>
+        <h2 class="card-title">What to send in</h2>
+        <div class="card-meta">Concrete proposals only</div>
+        <p class="card-body">
+          Examples of useful input:
+          <br>· Suggested ranges for mutation rate and resource penalty factors.
+          <br>· New glyph types or reward signals grounded in RFT quantities.
+          <br>· Specific "what if" scenarios (e.g. extreme scarcity, surplus, noise shocks).
+          <br>· Hypotheses: "If we do X, kappa should rise/fall in regime Y."
+        </p>
+        <p class="card-body">
+          Keep it tight: parameter names, values/ranges, and a one-line reason.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">Send your parameters and ideas</div>
+      <div class="section-desc">
+        Two simple channels. No accounts beyond what you already use for GitHub or email.
+      </div>
+    </div>
+    <div class="submit-box">
+      <div>
+        When you submit, include: (1) the experiment name ("Mutation Agent"), (2) your
+        parameter set or idea, and (3) what you expect to happen. If a configuration is
+        selected for a demo run, it will be referenced in the log with your handle (or "anon"
+        if you prefer).
+      </div>
+      <div class="submit-actions">
+        <a class="btn" href="https://github.com/RenderedFrameTheory/renderedframetheory.github.io/issues/new?title=RFT%20Mutation%20Agent%20proposal&body=Experiment%3A%20Mutation%20Agent%0AHandle%20(optional)%3A%0AParameters%20and%20idea%3A%0AExpected%20behaviour%3A" target="_blank" rel="noopener noreferrer">
+          Submit via GitHub issue
+        </a>
+        <a class="btn secondary" href="mailto:liam@renderedframetheory.com?subject=RFT%20Mutation%20Agent%20proposal">
+          Or email a proposal
+        </a>
+      </div>
+      <div style="font-size:11px; color:var(--text-muted);">
+        Submissions are filtered only for spam and abuse. There is no requirement to agree
+        with RFT — sharp, honest critiques are welcome if they are specific and technical.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">Weekly demo run log</div>
+      <div class="section-desc">
+        Summary of past demo runs using community inputs. Update this table as runs are completed.
+      </div>
+    </div>
+    <article class="card">
+      <div class="card-tagline">Public record</div>
+      <h2 class="card-title">Mutation Agent demo history</h2>
+      <div class="card-meta">Replace and extend these rows as you accumulate runs.</div>
+      <div class="card-body">
+        <table class="log-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Run ID</th>
+              <th>Key parameters / scenario</th>
+              <th>Source</th>
+              <th>Main outcome</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2025-12-11</td>
+              <td>MA-001</td>
+              <td>Higher mutation rate, softened resource penalty; exploration-focused regime.</td>
+              <td>Internal baseline</td>
+              <td>Short bursts of high kappa, but frequent collapse; useful as reference for future community runs.</td>
+            </tr>
+            <tr>
+              <td>2025-12-18</td>
+              <td>MA-002</td>
+              <td>Community set A: reduced noise, stricter resource discipline.</td>
+              <td>@example_handle</td>
+              <td>Stabilised mid-level coherence; fewer awakenings but more durable structures.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top:8px;">
+          For each new weekly demo run, add a row with the date, a simple ID, the
+          configuration summary, the submitter handle (if they want credit), and one
+          or two lines describing what actually happened.
+        </p>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer>
+  RFT Collaboration Lab · Help from people who care about the physics, not the gatekeeping
+</footer>
+</body>
+</html>
